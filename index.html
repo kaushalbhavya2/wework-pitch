@@ -4,21 +4,26 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>WeWork India — Marketing Pitch · Bhavya Kaushal</title>
-<meta name="description" content="A marketing pitch for WeWork India. Seven deliverables built on live market data — analysed, written, and shipped as a job application." />
+<meta name="description" content="An independent WeWork India growth pitch portfolio project by Bhavya Kaushal, built from public research, SEO analysis, modelling, and draft-ready marketing assets." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --purple:#534AB7;
-  --purple-soft:#7B73D4;
-  --navy:#1A1A2E;
-  --white:#FAFAFA;
-  --ink:#0D0D1A;
-  --muted:#6B6B80;
-  --muted-dark:#9090A8;
-  --surface:#F5F4FD;
-  --border:#E2E1F0;
+  --accent:#534AB7;
+  --accent-soft:#EEEAFE;
+  --accent-ink:#403A99;
+  --charcoal:#111111;
+  --black:#050505;
+  --white:#FFFFFF;
+  --ink:#151515;
+  --muted:#686868;
+  --muted-dark:#B8B8B8;
+  --surface:#F7F4EF;
+  --surface-strong:#EFE9DF;
+  --border:#DDD6CB;
+  --success:#12715B;
+  --warning:#B46912;
   --ease:cubic-bezier(0.25,0.46,0.45,0.94);
 }
 *,*::before,*::after{box-sizing:border-box;}
@@ -29,20 +34,108 @@ body{
   background:var(--white);
   color:var(--ink);
   font-size:17px;
-  line-height:1.7;
+  line-height:1.65;
   font-weight:400;
   overflow-x:hidden;
   max-width:100%;
 }
 img,svg{max-width:100%;display:block;}
-a{color:var(--purple);text-decoration:none;transition:opacity .2s var(--ease);}
+a{color:var(--accent);text-decoration:none;transition:opacity .2s var(--ease);}
 a:hover{opacity:.75;}
+
+.scroll-progress{
+  position:fixed;
+  inset:0 auto auto 0;
+  width:100%;
+  height:3px;
+  background:transparent;
+  z-index:1001;
+  pointer-events:none;
+}
+.scroll-progress span{
+  display:block;
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),#111);
+  transition:width .12s linear;
+}
+.site-chrome{
+  position:fixed;
+  top:16px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1120px,calc(100% - 32px));
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 12px;
+  border:1px solid rgba(17,17,17,.14);
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(18px);
+  box-shadow:0 18px 50px rgba(17,17,17,.12);
+  border-radius:8px;
+}
+.ww-lockup{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  min-width:max-content;
+  color:var(--black);
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+.ww-mark{
+  display:grid;
+  place-items:center;
+  width:34px;
+  height:24px;
+  border:2px solid var(--black);
+  border-radius:3px;
+  font-size:9px;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:-.04em;
+}
+.ww-word{font-size:16px;}
+.chrome-nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:4px;
+  flex-wrap:wrap;
+}
+.chrome-nav a{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  line-height:1;
+  padding:9px 10px;
+  border-radius:5px;
+}
+.chrome-nav a:hover,.chrome-nav a.active{
+  color:var(--black);
+  background:var(--surface);
+  opacity:1;
+}
+.chrome-pill{
+  color:#fff;
+  background:var(--black);
+  border-radius:5px;
+  padding:9px 10px;
+  font-size:12px;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap;
+}
 
 /* Layout primitives */
 section{
   width:100%;
-  padding:clamp(64px,10vh,120px) clamp(20px,5vw,80px);
+  padding:clamp(58px,8vh,96px) clamp(20px,5vw,80px);
   position:relative;
+  scroll-margin-top:92px;
 }
 .container{max-width:1200px;margin:0 auto;width:100%;}
 .eyebrow{
@@ -50,7 +143,7 @@ section{
   font-weight:600;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:var(--purple);
+  color:var(--accent);
   margin:0 0 24px;
 }
 section.dark .eyebrow{color:var(--muted-dark);}
@@ -69,9 +162,36 @@ section.dark .eyebrow{color:var(--muted-dark);}
   margin:0 0 64px;
   line-height:1.6;
 }
-section.dark{background:var(--navy);color:var(--white);}
+section.dark{background:var(--charcoal);color:var(--white);}
 section.dark .section-intro{color:var(--muted-dark);}
 section.surface{background:var(--surface);}
+.takeaway{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 22px;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  background:rgba(255,255,255,.76);
+  color:var(--ink);
+  font-size:14px;
+  font-weight:700;
+  line-height:1.35;
+}
+.takeaway::before{
+  content:'';
+  flex:0 0 auto;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+}
+section.dark .takeaway{
+  color:#fff;
+  border-color:rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
+}
 
 /* Reveal animation */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease),transform .5s var(--ease);}
@@ -79,33 +199,37 @@ section.surface{background:var(--surface);}
 
 /* HERO */
 .hero{
-  background:var(--navy);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,0) 38%),
+    radial-gradient(circle at 78% 18%,rgba(83,74,183,.32),transparent 28%),
+    var(--charcoal);
   color:var(--white);
   min-height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  padding-top:clamp(40px,6vh,80px);
-  padding-bottom:clamp(40px,6vh,80px);
+  padding-top:clamp(92px,12vh,132px);
+  padding-bottom:clamp(36px,6vh,72px);
 }
 .hero-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .hero-eyebrow{
   font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted-dark);
 }
-.hero-eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--purple);margin:0 10px 2px;vertical-align:middle;}
+.hero-eyebrow .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin:0 10px 2px;vertical-align:middle;}
 .hero-mid{display:flex;flex-direction:column;justify-content:center;flex:1;padding:60px 0;}
 .hero-headline{
-  font-size:clamp(52px,8vw,120px);
+  font-size:clamp(46px,7.6vw,106px);
   font-weight:800;
   letter-spacing:-0.04em;
-  line-height:.92;
-  margin:0 0 32px;
+  line-height:.94;
+  margin:0 0 30px;
   color:var(--white);
+  max-width:1080px;
 }
 .hero-headline .line{display:block;opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
 .hero-headline .line.in{opacity:1;transform:translateY(0);}
-.hero-headline .accent{color:var(--purple-soft);}
+.hero-headline .accent{color:#D7D1FF;}
 .hero-sub{
   font-size:clamp(18px,1.6vw,22px);
   color:var(--muted-dark);
@@ -128,7 +252,7 @@ section.surface{background:var(--surface);}
   transition:all .2s var(--ease);
   font-family:inherit;
 }
-.btn-primary{background:var(--purple);color:#fff;}
+.btn-primary{background:var(--accent);color:#fff;}
 .btn-primary:hover{background:#403A99;opacity:1;transform:translateY(-1px);}
 .btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.25);}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.05);opacity:1;}
@@ -138,62 +262,199 @@ section.surface{background:var(--surface);}
   opacity:0;transition:opacity 1s var(--ease) .8s;
 }
 .hero-bottom.in{opacity:1;}
+.project-note{
+  width:min(760px,100%);
+  margin:0 0 24px;
+  padding:14px 16px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:8px;
+  background:rgba(255,255,255,.075);
+  color:#D7D7D7;
+  font-size:13px;
+  line-height:1.45;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
+}
+.project-note.in{opacity:1;transform:translateY(0);}
+.project-note strong{
+  color:#fff;
+  font-weight:800;
+}
 
 /* THE FINDING */
 .dash-label{
-  font-size:13px;font-weight:600;letter-spacing:.04em;
-  color:var(--purple);
-  margin:48px 0 12px;
+  font-size:12px;font-weight:800;letter-spacing:.08em;
+  color:var(--accent);
+  margin:0 0 8px;
   text-transform:uppercase;
 }
-.dash-intro{font-size:17px;color:var(--muted);margin:0 0 24px;max-width:780px;}
-.tableau-wrapper{
-  width:100%;
-  overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
+.dash-intro{font-size:17px;color:var(--muted);margin:0;max-width:780px;}
+.impact-strip{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:14px;
+  margin:0 0 34px;
+}
+.impact-item{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:12px;
-  padding:8px;
-  margin-bottom:32px;
+  border-radius:8px;
+  padding:20px;
+  min-height:118px;
+}
+.impact-item strong{
+  display:block;
+  font-size:12px;
+  color:var(--accent);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.impact-item span{
+  display:block;
+  color:var(--ink);
+  font-size:clamp(18px,2vw,24px);
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-.02em;
+}
+.dashboard-card{
+  margin-top:34px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(17,17,17,.08);
+}
+.dashboard-header{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:18px;
+  padding:24px 24px 20px;
+  border-bottom:1px solid var(--border);
+  align-items:start;
+  position:relative;
+  z-index:2;
+  background:#fff;
+}
+.dashboard-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:38px;
+  padding:0 12px;
+  border:1px solid var(--border);
+  border-radius:6px;
+  color:var(--black);
+  font-size:12px;
+  font-weight:800;
+}
+.dashboard-link:hover{opacity:1;border-color:var(--black);}
+.tableau-wrapper{
+  width:100%;
+  overflow:hidden;
+  background:#fff;
+  border:0;
+  border-radius:0;
+  padding:16px 18px 0;
+  margin:0;
+  position:relative;
+  z-index:1;
+}
+.tableauPlaceholder{
+  width:100% !important;
+  min-height:540px;
+  position:relative;
+  border:1px solid var(--border);
+  border-radius:8px 8px 0 0;
+  overflow:hidden;
+  background:#fff;
+}
+.tableauViz{
+  width:100% !important;
+  max-width:100% !important;
+  border:0;
+}
+.dashboard-brief{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border-top:1px solid var(--border);
+}
+.dashboard-brief div{
+  background:#fff;
+  padding:18px 20px;
+}
+.dashboard-brief strong{
+  display:block;
+  color:var(--ink);
+  font-size:13px;
+  margin-bottom:6px;
+}
+.dashboard-brief p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.45;
 }
 .stat-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:24px;
-  margin-top:64px;
+  gap:14px;
+  margin:0 0 28px;
 }
 .stat{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:32px 28px;
+  border-radius:8px;
+  padding:24px 22px;
   transition:all .25s var(--ease);
   border-left:3px solid transparent;
+  min-height:204px;
+  display:flex;
+  flex-direction:column;
 }
-.stat:hover{border-left-color:var(--purple);background:var(--surface);}
+.stat:hover{border-left-color:var(--accent);background:var(--surface);}
 .stat-num{
-  font-size:clamp(40px,5vw,68px);
+  font-size:clamp(34px,4.2vw,58px);
   font-weight:800;
   letter-spacing:-0.02em;
   font-variant-numeric:tabular-nums;
-  line-height:1;
-  margin:0 0 12px;
+  line-height:.98;
+  margin:0 0 14px;
   color:var(--ink);
+  white-space:nowrap;
+}
+.stat-num.stat-num-compact{
+  font-size:clamp(30px,3.3vw,46px);
 }
 .stat-label{
   font-size:14px;
   color:var(--ink);
-  font-weight:500;
-  margin:0 0 14px;
-  line-height:1.45;
+  font-weight:650;
+  margin:0 0 16px;
+  line-height:1.42;
+  flex:1;
 }
 .stat .source{
   display:block;
   font-size:11px;
-  color:var(--muted);
+  color:#5B5B5B;
   letter-spacing:.02em;
-  font-weight:500;
+  font-weight:600;
+  line-height:1.35;
+  padding-top:12px;
+  border-top:1px solid var(--border);
+}
+.source-tag{
+  display:block;
+  color:var(--accent);
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-bottom:4px;
 }
 @media(max-width:880px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.stat-grid{grid-template-columns:1fr;}}
@@ -216,15 +477,16 @@ section.surface{background:var(--surface);}
   display:flex;
   flex-direction:column;
   cursor:pointer;
+  min-height:330px;
 }
-.card:hover{border-left-color:var(--purple);background:var(--surface);}
-.card.expanded{cursor:default;border-left-color:var(--purple);background:#fff;}
+.card:hover{border-left-color:var(--accent);background:var(--surface);}
+.card.expanded{cursor:default;border-left-color:var(--accent);background:#fff;}
 .card-num{
   font-size:11px;font-weight:600;letter-spacing:.14em;
   color:var(--muted);text-transform:uppercase;
   margin:0 0 16px;
 }
-.card-num .num{color:var(--purple);}
+.card-num .num{color:var(--accent);}
 .card-num .sep{margin:0 8px;color:var(--border);}
 .card-title{
   font-size:21px;font-weight:600;letter-spacing:-0.015em;
@@ -234,8 +496,24 @@ section.surface{background:var(--surface);}
 .card-summary{
   font-size:15px;color:var(--muted);
   line-height:1.55;
-  margin:0 0 22px;
+  margin:0 0 16px;
   flex:1;
+}
+.card-metric{
+  display:inline-flex;
+  width:max-content;
+  max-width:100%;
+  align-items:center;
+  min-height:28px;
+  padding:5px 8px;
+  margin:0 0 18px;
+  border:1px solid var(--border);
+  border-radius:5px;
+  color:var(--ink);
+  background:var(--surface);
+  font-size:12px;
+  font-weight:800;
+  line-height:1.2;
 }
 .card-toggle{
   font-size:13px;color:var(--muted);
@@ -244,7 +522,7 @@ section.surface{background:var(--surface);}
   user-select:none;
   transition:color .2s var(--ease);
 }
-.card:hover .card-toggle{color:var(--purple);}
+.card:hover .card-toggle{color:var(--accent);}
 .card-body{
   max-height:0;
   overflow:hidden;
@@ -266,7 +544,7 @@ section.surface{background:var(--surface);}
 .card-body li{margin-bottom:6px;}
 .card-body hr{border:none;border-top:1px solid var(--border);margin:28px 0;}
 .card-body blockquote{
-  border-left:3px solid var(--purple);
+  border-left:3px solid var(--accent);
   padding:6px 18px;
   color:var(--muted);
   font-style:italic;
@@ -285,7 +563,7 @@ section.surface{background:var(--surface);}
   padding:10px 12px;border-bottom:1px solid var(--border);
   vertical-align:top;
 }
-.card-body a{color:var(--purple);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
+.card-body a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}
 
 /* THE PLAN — timeline */
 .timeline-row{
@@ -316,8 +594,8 @@ section.surface{background:var(--surface);}
 }
 .phase-block:first-child{margin-left:0;}
 .phase-block:last-child{margin-right:0;}
-.phase-block:hover{border-color:var(--purple);}
-.phase-block.active{background:var(--purple);color:#fff;border-color:var(--purple);}
+.phase-block:hover{border-color:var(--accent);}
+.phase-block.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 .phase-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;}
 .phase-block.active .phase-label{color:rgba(255,255,255,.75);}
 .phase-name{font-size:18px;font-weight:600;margin:0;}
@@ -327,21 +605,33 @@ section.surface{background:var(--surface);}
 .phase-content{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:12px;
-  padding:36px;
+  border-radius:10px;
+  padding:12px 26px;
   display:none;
 }
 .phase-content.active{display:block;animation:fadeIn .35s var(--ease);}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-.action{padding:20px 0;border-bottom:1px solid var(--border);}
+.action{
+  display:grid;
+  grid-template-columns:minmax(220px,.72fr) 1.28fr;
+  gap:22px;
+  padding:22px 0;
+  border-bottom:1px solid var(--border);
+}
 .action:last-child{border-bottom:none;}
 .action-name{font-size:16px;font-weight:600;color:var(--ink);margin:0 0 10px;line-height:1.4;}
-.action-meta{padding-left:16px;font-size:14px;color:var(--muted);}
+.action-meta{
+  padding-left:0;
+  font-size:14px;
+  color:var(--muted);
+  display:grid;
+  gap:8px;
+}
 .action-meta div{margin-bottom:4px;}
 .action-meta .key{font-weight:600;color:var(--ink);margin-right:6px;}
 
 .pull-quote{
-  border-left:3px solid var(--purple);
+  border-left:3px solid var(--accent);
   padding:18px 24px;
   margin:48px 0 0;
   font-size:clamp(17px,1.8vw,20px);
@@ -364,9 +654,9 @@ section.surface{background:var(--surface);}
   border-radius:14px;
   padding:48px clamp(24px,4vw,56px);
   margin-bottom:56px;
-  border-left:3px solid var(--purple);
+  border-left:3px solid var(--accent);
 }
-.concept-name{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin:0 0 18px;}
+.concept-name{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;}
 .concept-headline{
   font-size:clamp(28px,4vw,48px);
   font-weight:700;
@@ -391,7 +681,7 @@ section.surface{background:var(--surface);}
   font-family:inherit;
 }
 .tab:hover{color:var(--ink);}
-.tab.active{color:var(--purple);border-bottom-color:var(--purple);}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent);}
 .tab-panel{display:none;padding:36px 0 0;animation:fadeIn .3s var(--ease);}
 .tab-panel.active{display:block;}
 .variant-grid{display:grid;grid-template-columns:140px 1fr;gap:18px 32px;}
@@ -404,26 +694,101 @@ section.surface{background:var(--surface);}
 .channel-section{margin-top:80px;}
 .donut-wrap{
   display:grid;
-  grid-template-columns:280px 1fr;
-  gap:56px;
-  align-items:center;
+  grid-template-columns:300px 1fr;
+  gap:44px;
+  align-items:start;
 }
-@media(max-width:760px){.donut-wrap{grid-template-columns:1fr;justify-items:center;gap:32px;}}
-.donut-svg{width:280px;height:280px;}
+@media(max-width:760px){.donut-wrap{grid-template-columns:1fr;justify-items:stretch;gap:28px;}.donut-panel{justify-self:center;}}
+.donut-panel{
+  display:grid;
+  gap:18px;
+  justify-items:center;
+}
+.donut-svg{width:280px;height:280px;filter:drop-shadow(0 18px 38px rgba(17,17,17,.12));}
 .donut-svg circle.seg{
   fill:none;
   stroke-width:32;
   transform:rotate(-90deg);
   transform-origin:50% 50%;
-  transition:stroke-dashoffset 1s var(--ease);
+  transition:stroke-dasharray 1s var(--ease),opacity .2s var(--ease),stroke-width .2s var(--ease),filter .2s var(--ease);
+  cursor:pointer;
 }
-.donut-center-label{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;fill:var(--ink);}
-.legend{display:flex;flex-direction:column;gap:14px;}
-.legend-row{display:grid;grid-template-columns:14px 1fr auto;gap:14px;align-items:start;font-size:14px;}
+.donut-svg circle.seg.is-active{
+  stroke-width:36;
+  filter:drop-shadow(0 0 7px rgba(83,74,183,.42));
+}
+.donut-svg circle.seg.is-muted{opacity:.32;}
+.donut-svg circle.seg:focus{outline:none;}
+.donut-svg circle.seg:focus-visible{stroke-width:38;}
+.donut-center-label{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  fill:var(--ink);
+}
+.donut-center-pct{
+  font-size:24px;
+  font-weight:800;
+  fill:var(--ink);
+}
+.channel-active{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:#fff;
+  padding:18px;
+}
+.channel-active strong{
+  display:block;
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.25;
+  margin-bottom:6px;
+}
+.channel-active span{
+  display:block;
+  color:var(--accent);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.channel-active p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+.legend{display:flex;flex-direction:column;gap:10px;}
+.legend-row{
+  display:grid;
+  grid-template-columns:14px 1fr auto;
+  gap:14px;
+  align-items:start;
+  font-size:14px;
+  padding:14px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:#fff;
+  text-align:left;
+  font-family:inherit;
+  cursor:pointer;
+}
+.legend-row:hover,.legend-row:focus-visible{
+  border-color:var(--accent);
+  outline:none;
+  box-shadow:0 0 0 3px rgba(83,74,183,.14);
+}
+.legend-row.is-active{
+  border-color:var(--accent);
+  background:var(--accent-soft);
+}
 .legend-dot{width:14px;height:14px;border-radius:3px;margin-top:4px;}
-.legend-name{font-weight:600;color:var(--ink);}
+.legend-name{font-weight:750;color:var(--ink);}
 .legend-rationale{font-size:13px;color:var(--muted);grid-column:2/4;line-height:1.5;}
-.legend-pct{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;}
+.legend-pct{font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;}
 
 /* CLOSE */
 .close-line{
@@ -446,16 +811,30 @@ section.surface{background:var(--surface);}
   color:var(--muted-dark);margin-bottom:6px;
 }
 .close-quiet{
-  text-align:center;font-size:13px;color:var(--muted-dark);
-  margin:64px 0 8px;max-width:600px;margin-left:auto;margin-right:auto;
+  text-align:center;font-size:14px;color:var(--muted-dark);
+  margin:38px 0 8px;max-width:760px;margin-left:auto;margin-right:auto;
+  line-height:1.55;
 }
 .close-built{
   text-align:center;font-size:11px;font-weight:500;letter-spacing:.14em;
   text-transform:uppercase;color:var(--muted-dark);margin:48px 0 0;
 }
 
+@media(max-width:820px){
+  .site-chrome{align-items:flex-start;}
+  .chrome-nav{display:none;}
+  .impact-strip,.dashboard-brief{grid-template-columns:1fr;}
+  .dashboard-header{grid-template-columns:1fr;}
+  .tableau-wrapper{padding:12px 12px 0;}
+  .action{grid-template-columns:1fr;gap:8px;}
+}
 @media(max-width:540px){
   .contact-row{flex-direction:column;align-items:center;gap:24px;}
+  .site-chrome{top:10px;width:calc(100% - 20px);}
+  .chrome-pill{display:none;}
+  .hero{padding-top:92px;}
+  .hero-headline{font-size:clamp(42px,13vw,62px);}
+  .tableauPlaceholder{min-height:620px;}
 }
 
 /* Reduced motion */
@@ -467,9 +846,149 @@ section.surface{background:var(--surface);}
   .reveal{opacity:1;transform:none;}
   .hero-headline .line,.hero-sub,.hero-ctas,.hero-bottom{opacity:1;transform:none;}
 }
+
+/* Rebuild polish: proof strip, accessibility, scannability */
+.hero-proof{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  width:min(820px,100%);
+  margin:34px 0 0;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.18);
+  border-radius:8px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
+}
+.hero-proof.in{opacity:1;transform:translateY(0);}
+.hero-proof span{
+  display:block;
+  min-height:86px;
+  padding:18px;
+  background:rgba(255,255,255,.08);
+  color:var(--muted-dark);
+  font-size:13px;
+  font-weight:700;
+  line-height:1.35;
+}
+.hero-proof strong{
+  display:block;
+  color:#fff;
+  font-size:28px;
+  line-height:1;
+  margin-bottom:8px;
+}
+.hero-headline{
+  font-size:clamp(44px,7vw,96px);
+}
+.hero-mid{padding:44px 0;}
+.hero-sub{margin-bottom:30px;}
+.evidence-note{
+  margin:0 0 18px;
+  color:#5B5B5B;
+  font-size:13px;
+  line-height:1.5;
+}
+.evidence-note strong{color:var(--ink);}
+.therefore{
+  margin:22px 0 0;
+  padding:18px 20px;
+  background:var(--charcoal);
+  color:#fff;
+  border-radius:8px;
+  font-size:clamp(17px,1.55vw,20px);
+  font-weight:700;
+  line-height:1.45;
+  letter-spacing:-.01em;
+}
+.card-toggle{
+  appearance:none;
+  border:0;
+  background:transparent;
+  padding:0;
+  text-align:left;
+  font-family:inherit;
+  cursor:pointer;
+}
+.card-toggle:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+  border-radius:4px;
+}
+.work-grid,.work-grid > .card,.card-body,.card-body-inner{
+  min-width:0;
+}
+.card-title,.card-summary,.card-body p,.card-body li,.action-name{
+  overflow-wrap:anywhere;
+}
+.phase-snapshot{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:10px;
+  margin:0 0 28px;
+  background:var(--border);
+}
+.phase-snapshot div{
+  background:#fff;
+  padding:18px 20px;
+}
+.phase-snapshot strong{
+  display:block;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:11px;
+  margin-bottom:8px;
+}
+.phase-snapshot span{
+  color:var(--ink);
+  font-size:15px;
+  font-weight:700;
+  line-height:1.35;
+}
+.variant-title{
+  margin:0 0 20px;
+  color:var(--ink);
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.015em;
+}
+@media(max-width:820px){
+  .hero-proof,.phase-snapshot{grid-template-columns:1fr;}
+}
+@media(max-width:540px){
+  .hero-headline{
+    font-size:clamp(38px,11.3vw,52px);
+    line-height:.98;
+  }
+  .hero-proof span{min-height:72px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-proof,.project-note{opacity:1;transform:none;}
+}
 </style>
 </head>
 <body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+<header class="site-chrome" aria-label="Pitch navigation">
+  <a class="ww-lockup" href="#hero" aria-label="WeWork India pitch home">
+    <span class="ww-mark">we</span>
+    <span class="ww-word">WeWork</span>
+  </a>
+  <nav class="chrome-nav" aria-label="Sections">
+    <a href="#finding">Data</a>
+    <a href="#work">Assets</a>
+    <a href="#plan">90 days</a>
+    <a href="#campaign">Campaign</a>
+    <a href="#close">Contact</a>
+  </nav>
+  <span class="chrome-pill">Growth pitch</span>
+</header>
 
 <!-- 1. HERO -->
 <section class="hero dark" id="hero">
@@ -480,15 +999,21 @@ section.surface{background:var(--surface);}
 
   <div class="container hero-mid">
     <h1 class="hero-headline">
-      <span class="line">WeWork India's market</span>
-      <span class="line">analysed, written,</span>
-      <span class="line">and shipped — as a</span>
-      <span class="line accent">job application.</span>
+      <span class="line">A growth pitch</span>
+      <span class="line">for WeWork India.</span>
+      <span class="line accent">Six assets. Two dashboards.</span>
+      <span class="line">One 90-day plan.</span>
     </h1>
-    <p class="hero-sub">Seven deliverables built on live market data. The analysis is live. So is the work.</p>
+    <p class="hero-sub">Created as an independent hiring work sample, structured like practical growth work: search, content, city expansion, campaign thinking, and pipeline measurement.</p>
+    <p class="project-note"><strong>Independent portfolio project.</strong> Built from publicly available research, SEO analysis, and modelling. Not affiliated with, endorsed by, commissioned by, or reviewed by WeWork.</p>
     <div class="hero-ctas">
       <a href="#work" class="btn btn-primary">See the work <span aria-hidden="true">↓</span></a>
       <a href="https://public.tableau.com/app/profile/bhavya.kaushal8300/vizzes" target="_blank" rel="noopener" class="btn btn-ghost">View on Tableau <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="hero-proof" aria-label="Pitch proof points">
+      <span><strong>6</strong>draft-ready marketing assets</span>
+      <span><strong>2</strong>live Tableau dashboards</span>
+      <span><strong>90</strong>days of measurable execution</span>
     </div>
   </div>
 
@@ -501,14 +1026,51 @@ section.surface{background:var(--surface);}
 <section class="surface" id="finding">
   <div class="container">
     <p class="eyebrow reveal">The Data</p>
-    <h2 class="section-h2 reveal">Two dashboards expose two strategic gaps.</h2>
-    <p class="section-intro reveal">A market-opportunity dashboard and a competitive-analysis dashboard, both built in Tableau on live source data. The first locates where WeWork is not. The second shows what the absence costs.</p>
+    <p class="takeaway reveal">Hypothesis: WeWork has premium brand strength; one growth opportunity may sit in discoverability, comparison, and city-level validation.</p>
+    <h2 class="section-h2 reveal">The data suggests where WeWork could test growth next.</h2>
+    <p class="section-intro reveal">This analysis does not argue for competing mainly on lowest price or biggest footprint. It explores how a premium proposition could become easier to find, compare, and validate in emerging business cities.</p>
 
-    <div class="reveal">
-      <p class="dash-label">Dashboard 1 — Market Opportunity</p>
-      <p class="dash-intro">WeWork operates in 8 cities. Three Tier-2 cities — Jaipur, Indore, Kochi — hold 11,100+ startups and zero WeWork presence.</p>
+    <div class="impact-strip reveal" aria-label="Executive summary">
+      <div class="impact-item"><strong>Core insight</strong><span>Premium positioning can stay intact if discovery and local proof get stronger.</span></div>
+      <div class="impact-item"><strong>Recommended test</strong><span>A Kochi demand-validation sprint could test Tier-2 interest before major lease or fit-out commitment.</span></div>
+      <div class="impact-item"><strong>Supporting work</strong><span>Two dashboards, six assets, and a 90-day plan translate the hypothesis into practical execution.</span></div>
+    </div>
+
+    <div class="stat-grid reveal">
+      <div class="stat">
+        <div class="stat-num" data-prefix="₹" data-target="16739" data-suffix="">₹16,739</div>
+        <p class="stat-label">Estimated average seat price; used as the premium pricing anchor in the model.</p>
+        <small class="source"><span class="source-tag">Derived/modelled metric</span>Public WeWork India inputs; verify against latest filings before formal use.</small>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-prefix="" data-target="21500" data-suffix="+">21,500+</div>
+        <p class="stat-label">Registered startups across the broader Rajasthan, Madhya Pradesh, and Kerala ecosystems; Jaipur, Indore, and Kochi are used as city-level test markets.</p>
+        <small class="source"><span class="source-tag">Sources</span>Rajasthan iStart reporting; Madhya Pradesh government release; Kerala Startup Mission.</small>
+      </div>
+      <div class="stat">
+        <div class="stat-num stat-num-compact" data-text="73 vs 257">73 vs 257</div>
+        <p class="stat-label">WeWork centres vs Awfis reported network/signed supply; a coverage comparison, not a positioning verdict.</p>
+        <small class="source"><span class="source-tag">Sources</span>WeWork India Q3 FY26 investor presentation / media release; Awfis Q3 FY26 investor presentation / press release.</small>
+      </div>
+      <div class="stat">
+        <div class="stat-num stat-num-compact" data-text="13.58%">13.58%</div>
+        <p class="stat-label">India flexible office market forecast, 2026–2031.</p>
+        <small class="source"><span class="source-tag">Source</span>Mordor Intelligence, India Flexible Office Space Market.</small>
+      </div>
+    </div>
+    <p class="evidence-note reveal"><strong>Source note:</strong> Figures combine public sources, provided brief inputs, and portfolio modelling assumptions. Unsourced projections are treated as modelled scenarios.</p>
+    <p class="therefore reveal">The implication: the opportunity is not to dilute the premium proposition. It is to make that proposition more findable, measurable, and locally credible where demand appears to be forming.</p>
+
+    <div class="dashboard-card reveal">
+      <div class="dashboard-header">
+        <div>
+          <p class="dash-label">Dashboard 1 — Market Opportunity</p>
+          <p class="dash-intro">Jaipur, Indore, and Kochi sit inside three state-backed startup ecosystems with meaningful registered startup bases, making them practical city-level test markets.</p>
+        </div>
+        <a class="dashboard-link" href="https://public.tableau.com/app/profile/bhavya.kaushal8300/vizzes" target="_blank" rel="noopener">Open Tableau ↗</a>
+      </div>
       <div class="tableau-wrapper">
-        <div class='tableauPlaceholder' id='viz1777302867289' style='position: relative'>
+        <div class='tableauPlaceholder' id='viz1777302867289'>
         <noscript><a href='#'><img alt='Dashboard 1' src='https://public.tableau.com/static/images/QJ/QJ7KJD3S5/1_rss.png' style='border: none' /></a></noscript>
         <object class='tableauViz' style='display:none;'>
         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
@@ -523,24 +1085,25 @@ section.surface{background:var(--surface);}
         <param name='display_count' value='yes' />
         <param name='language' value='en-US' />
         </object></div>
-        <script type='text/javascript'>
-        var divElement = document.getElementById('viz1777302867289');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        if (divElement.offsetWidth > 800) { vizElement.style.width='1366px'; vizElement.style.height='795px'; }
-        else if (divElement.offsetWidth > 500) { vizElement.style.width='1366px'; vizElement.style.height='795px'; }
-        else { vizElement.style.width='100%'; vizElement.style.height='977px'; }
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>
+        <script type='text/javascript'>window.__tableauEmbeds=(window.__tableauEmbeds||[]);window.__tableauEmbeds.push({id:'viz1777302867289',desktopHeight:795,mobileHeight:977});</script>
+      </div>
+      <div class="dashboard-brief">
+        <div><strong>What it shows</strong><p>Startup density and WeWork footprint do not appear to line up evenly across India. <em>Source-backed context, subject to footprint verification.</em></p></div>
+        <div><strong>Why it matters</strong><p>The testable opportunity is selective city validation before heavy commitment.</p></div>
+        <div><strong>Pitch implication</strong><p>Kochi could be explored through a pre-lease validation sprint before any fit-out spend is modelled as committed.</p></div>
       </div>
     </div>
 
-    <div class="reveal">
-      <p class="dash-label">Dashboard 2 — Competitive Analysis</p>
-      <p class="dash-intro">Awfis runs 257 centres across 18 cities. WeWork's premium positioning is real — the geographic coverage is not.</p>
+    <div class="dashboard-card reveal">
+      <div class="dashboard-header">
+        <div>
+          <p class="dash-label">Dashboard 2 — Competitive Analysis</p>
+          <p class="dash-intro">WeWork India: 73 centres across 8 cities. Awfis: 257 centres, ~177K seats, across 18 cities. WeWork centres vs Awfis reported network/signed supply; the coverage gap is a search and city-level demand hypothesis, not a positioning verdict.</p>
+        </div>
+        <a class="dashboard-link" href="https://public.tableau.com/app/profile/bhavya.kaushal8300/vizzes" target="_blank" rel="noopener">Open Tableau ↗</a>
+      </div>
       <div class="tableau-wrapper">
-        <div class='tableauPlaceholder' id='viz1777302919704' style='position: relative'>
+        <div class='tableauPlaceholder' id='viz1777302919704'>
         <noscript><a href='#'><img alt='Competitive Analysis' src='https://public.tableau.com/static/images/PY/PYQCS4WXN/1_rss.png' style='border: none' /></a></noscript>
         <object class='tableauViz' style='display:none;'>
         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
@@ -555,39 +1118,12 @@ section.surface{background:var(--surface);}
         <param name='display_count' value='yes' />
         <param name='language' value='en-US' />
         </object></div>
-        <script type='text/javascript'>
-        var divElement = document.getElementById('viz1777302919704');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        if (divElement.offsetWidth > 800) { vizElement.style.width='1366px'; vizElement.style.height='795px'; }
-        else if (divElement.offsetWidth > 500) { vizElement.style.width='1366px'; vizElement.style.height='795px'; }
-        else { vizElement.style.width='100%'; vizElement.style.height='1027px'; }
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>
+        <script type='text/javascript'>window.__tableauEmbeds=(window.__tableauEmbeds||[]);window.__tableauEmbeds.push({id:'viz1777302919704',desktopHeight:795,mobileHeight:1027});</script>
       </div>
-    </div>
-
-    <div class="stat-grid reveal">
-      <div class="stat">
-        <div class="stat-num" data-prefix="₹" data-target="16739" data-suffix="">₹16,739</div>
-        <p class="stat-label">Average seat price — 57–75% premium over market</p>
-        <small class="source">Source: WeWork India, 2025</small>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-prefix="" data-target="11100" data-suffix="+">11,100+</div>
-        <p class="stat-label">Startups in Jaipur, Indore, Kochi — zero WeWork centres</p>
-        <small class="source">Source: BRIEF.md / DPIIT</small>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-text="70 vs 257">70 vs 257</div>
-        <p class="stat-label">WeWork centres vs Awfis centres — 3.7× footprint gap</p>
-        <small class="source">Source: Company data, 2025</small>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-prefix="$" data-target="7.71" data-suffix="B" data-decimals="2">$7.71B</div>
-        <p class="stat-label">India flex workspace market by 2030 at 13.72% CAGR</p>
-        <small class="source">Source: Grand View Research</small>
+      <div class="dashboard-brief">
+        <div><strong>What it shows</strong><p>Premium positioning and footprint breadth appear to be different competitive advantages. <em>Public-data comparison, subject to latest footprint verification.</em></p></div>
+        <div><strong>Why it matters</strong><p>Coverage gaps can become SEO gaps when competitors build city pages and capture demand first.</p></div>
+        <div><strong>Pitch implication</strong><p>A practical next step could be sharper city, building, and product landing-page coverage.</p></div>
       </div>
     </div>
   </div>
@@ -597,31 +1133,35 @@ section.surface{background:var(--surface);}
 <section id="work">
   <div class="container">
     <p class="eyebrow reveal">The Deliverables</p>
-    <h2 class="section-h2 reveal">Six pieces of finished work.</h2>
-    <p class="section-intro reveal">Each card below contains the full deliverable — not a description.</p>
+    <p class="takeaway reveal">Six developed assets designed to be reviewed, adapted, and tested.</p>
+    <h2 class="section-h2 reveal">Open any card and the actual work is inside.</h2>
+    <p class="section-intro reveal">This is designed for fast review: each asset has a business claim, a measurable hook, and the full deliverable embedded below it.</p>
 
     <div class="work-grid">
       <article class="card reveal" data-card="1">
         <p class="card-num"><span class="num">01</span><span class="sep">·</span>SEO Audit</p>
-        <h3 class="card-title">WeWork's organic ceiling is content architecture — not authority.</h3>
+        <h3 class="card-title">WeWork's organic upside appears to sit in content architecture, not just authority.</h3>
         <p class="card-summary">A competitor with lower domain authority pulls 3× the traffic from the same keyword universe.</p>
-        <span class="card-toggle">Expand <span aria-hidden="true">↓</span></span>
+        <span class="card-metric">~67% branded search reliance in sampled Ahrefs keyword set</span>
+        <button class="card-toggle" type="button" aria-expanded="false">Read asset <span aria-hidden="true">↓</span></button>
         <div class="card-body"><div class="card-body-inner" data-md-id="md-1"></div></div>
       </article>
 
       <article class="card reveal" data-card="2">
         <p class="card-num"><span class="num">02</span><span class="sep">·</span>Content</p>
         <h3 class="card-title">Coworking vs Traditional Office: The Full Cost Breakdown</h3>
-        <p class="card-summary">Engineered to rank for "coworking space" (4,400/mo). Drafted and ready to publish.</p>
-        <span class="card-toggle">Expand <span aria-hidden="true">↓</span></span>
+        <p class="card-summary">Targets “coworking space” (4.4K/month), based on the sampled Ahrefs keyword export.</p>
+        <span class="card-metric">Source: Ahrefs sample, 27 Apr 2026</span>
+        <button class="card-toggle" type="button" aria-expanded="false">Read asset <span aria-hidden="true">↓</span></button>
         <div class="card-body"><div class="card-body-inner" data-md-id="md-2"></div></div>
       </article>
 
       <article class="card reveal" data-card="3">
         <p class="card-num"><span class="num">03</span><span class="sep">·</span>Content</p>
         <h3 class="card-title">Best Office Space in Bengaluru 2026: Neighbourhood-by-Neighbourhood</h3>
-        <p class="card-summary">Targets "office space" (2,700/mo) and "coworking space in bangalore" (1,200/mo). Ready to publish.</p>
-        <span class="card-toggle">Expand <span aria-hidden="true">↓</span></span>
+        <p class="card-summary">Targets “office space” (2.7K/month) and “coworking space in bangalore” (1.2K/month), based on the sampled Ahrefs keyword export.</p>
+        <span class="card-metric">Source: Ahrefs sample, 27 Apr 2026</span>
+        <button class="card-toggle" type="button" aria-expanded="false">Read asset <span aria-hidden="true">↓</span></button>
         <div class="card-body"><div class="card-body-inner" data-md-id="md-3"></div></div>
       </article>
 
@@ -629,23 +1169,26 @@ section.surface{background:var(--surface);}
         <p class="card-num"><span class="num">04</span><span class="sep">·</span>Distribution</p>
         <h3 class="card-title">Five LinkedIn posts. Three voices. No generic content.</h3>
         <p class="card-summary">Posts targeting enterprise decision-makers, SEO practitioners, and founder audiences.</p>
-        <span class="card-toggle">Expand <span aria-hidden="true">↓</span></span>
+        <span class="card-metric">5 draft-ready social assets</span>
+        <button class="card-toggle" type="button" aria-expanded="false">Read asset <span aria-hidden="true">↓</span></button>
         <div class="card-body"><div class="card-body-inner" data-md-id="md-4"></div></div>
       </article>
 
       <article class="card reveal" data-card="5">
         <p class="card-num"><span class="num">05</span><span class="sep">·</span>Strategy</p>
-        <h3 class="card-title">Kochi Pilot: ₹16 cr ask, with the kill-switch built in.</h3>
-        <p class="card-summary">Base case + downside model, breakeven by month, 90-day demand-validation gate before any capex burns.</p>
-        <span class="card-toggle">Expand <span aria-hidden="true">↓</span></span>
+        <h3 class="card-title">Kochi Pilot Scenario: modelled ₹16 cr case with a validation gate.</h3>
+        <p class="card-summary">Base case + downside model, breakeven by month, and a 90-day validation gate before major capex.</p>
+        <span class="card-metric">Modelled ₹16 cr scenario</span>
+        <button class="card-toggle" type="button" aria-expanded="false">Read asset <span aria-hidden="true">↓</span></button>
         <div class="card-body"><div class="card-body-inner" data-md-id="md-5"></div></div>
       </article>
 
       <article class="card reveal" data-card="6">
         <p class="card-num"><span class="num">06</span><span class="sep">·</span>Campaign</p>
         <h3 class="card-title">The Kochi Launch Campaign: "The Building Catches Up."</h3>
-        <p class="card-summary">Three message variants, five-channel mix, 90-day launch arc tied to the LOI conversion gate.</p>
-        <span class="card-toggle">Expand <span aria-hidden="true">↓</span></span>
+        <p class="card-summary">Three message variants, five-channel mix, and a 90-day launch arc tied to LOI conversations.</p>
+        <span class="card-metric">90-day LOI scenario</span>
+        <button class="card-toggle" type="button" aria-expanded="false">Read asset <span aria-hidden="true">↓</span></button>
         <div class="card-body"><div class="card-body-inner" data-md-id="md-6"></div></div>
       </article>
     </div>
@@ -656,8 +1199,15 @@ section.surface{background:var(--surface);}
 <section class="surface" id="plan">
   <div class="container">
     <p class="eyebrow reveal">Q1 Plan</p>
+    <p class="takeaway reveal">A first 90 days could create visible proof: content live, pages live, demand signal live.</p>
     <h2 class="section-h2 reveal">Day 1 to Day 90.</h2>
-    <p class="section-intro reveal">Three phases. Five actions per phase. Each one ships a measurable thing — not a strategy slide.</p>
+    <p class="section-intro reveal">Three phases. Five actions per phase. Each phase ships a measurable output, not just a planning artefact.</p>
+
+    <div class="phase-snapshot reveal" aria-label="90-day plan summary">
+      <div><strong>Days 1-30</strong><span>Publish the assets, launch measurement, and test whether non-branded demand can move.</span></div>
+      <div><strong>Days 31-60</strong><span>Build city/product pages and test LinkedIn demand against enterprise buyers.</span></div>
+      <div><strong>Days 61-90</strong><span>Validate Kochi with outreach, waitlist signal, and priced LOI conversations.</span></div>
+    </div>
 
     <div class="timeline-row reveal" id="timelineRow">
       <button class="phase-block active" data-phase="1">
@@ -678,15 +1228,15 @@ section.surface{background:var(--surface);}
       <div class="action">
         <h4 class="action-name">Publish Blog Post 1 (coworking cost breakdown)</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>indexed in Google within 7 days; 500+ organic visits and top-20 rank for "coworking space" within 30 days.</div>
-          <div><span class="key">Dependency:</span>none (drafted, ready to ship).</div>
-          <div><span class="key">Why now:</span>zero-budget proof that non-branded content moves the needle on a 4,400/mo keyword WeWork currently doesn't rank for.</div>
+          <div><span class="key">Metric:</span>indexed in Google within 7 days; early ranking movement and 500+ directional organic visits within 30 days.</div>
+          <div><span class="key">Dependency:</span>none for portfolio draft; internal review would come before publication.</div>
+          <div><span class="key">Why now:</span>a low-budget signal for whether non-branded content can move a 4,400/mo keyword WeWork appears under-represented on.</div>
         </div>
       </div>
       <div class="action">
         <h4 class="action-name">Publish Blog Post 2 (Bengaluru neighbourhood guide)</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>300+ organic visits in 30 days; 2+ internal links from existing site pages live.</div>
+          <div><span class="key">Metric:</span>300+ directional organic visits in 30 days; 2+ internal links from existing site pages live.</div>
           <div><span class="key">Dependency:</span>none (drafted, cross-linked to Post 1).</div>
           <div><span class="key">Why now:</span>stacks intent against Post 1, builds the topical cluster the audit recommends, and seeds the Bengaluru city page work in Phase 2.</div>
         </div>
@@ -694,17 +1244,17 @@ section.surface{background:var(--surface);}
       <div class="action">
         <h4 class="action-name">Launch the 5-post LinkedIn series</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>1 post per week for 5 weeks; 50K+ combined impressions; 3+ enterprise inbound conversations attributed to the series.</div>
-          <div><span class="key">Dependency:</span>30-min review with the CMO on the two executive-voice posts.</div>
-          <div><span class="key">Why now:</span>the executive voice posts cost nothing, signal an ability to write in leadership tone from day one, and seed the Tier-2 narrative externally before the internal pilot ask.</div>
+          <div><span class="key">Metric:</span>1 post per week for 5 weeks; modelled target of 50K+ combined impressions; 3+ enterprise conversations as an attribution stretch target.</div>
+          <div><span class="key">Dependency:</span>internal brand/legal review before any executive-voice post is used.</div>
+          <div><span class="key">Why now:</span>the executive-voice drafts test leadership tone and seed the Tier-2 narrative as a discussion asset before any internal pilot decision.</div>
         </div>
       </div>
       <div class="action">
         <h4 class="action-name">Run the non-branded keyword gap audit live with the SEO/content team</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>prioritised backlog of 40 target keywords (city, building, product) shared with content + dev leads by Day 21; alignment meeting closed with named owners per cluster.</div>
+          <div><span class="key">Metric:</span>modelled backlog of 40 target keywords (city, building, product) shared with content + dev leads by Day 21; alignment meeting closed with named owners per cluster.</div>
           <div><span class="key">Dependency:</span>1 hour each from SEO lead and web dev lead.</div>
-          <div><span class="key">Why now:</span>the audit shows cofynd.com pulls 3× WeWork's traffic from the same keyword universe at lower DR — this is the single highest-leverage finding and the team needs to see the numbers, not the slides.</div>
+          <div><span class="key">Why now:</span>the audit suggests cofynd.com pulls materially more traffic from an overlapping keyword universe at lower DR; this is a high-priority hypothesis to validate with internal analytics.</div>
         </div>
       </div>
       <div class="action">
@@ -721,23 +1271,23 @@ section.surface{background:var(--surface);}
       <div class="action">
         <h4 class="action-name">Ship city landing pages for Bengaluru, Noida, Mumbai</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>all 3 pages live by Day 55; combined 1,500+ organic visits/month by Day 90; top-10 rank for at least one city's "coworking space in [city]" term.</div>
+          <div><span class="key">Metric:</span>all 3 pages live by Day 55; directional organic lift by Day 90; top-50/top-30 movement for at least one city "coworking space in [city]" term.</div>
           <div><span class="key">Dependency:</span>web dev (est. 8 dev days), 1 designer week.</div>
-          <div><span class="key">Why now:</span>4,100–5,600/mo opportunity confirmed in the audit; Awfis already ranks here and WeWork is absent. This is the largest ROI block in the backlog.</div>
+          <div><span class="key">Why now:</span>the audit suggests a 4,100–5,600/mo opportunity where Awfis already ranks and WeWork appears under-represented.</div>
         </div>
       </div>
       <div class="action">
         <h4 class="action-name">Rebuild the Virtual Office product page</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>live by Day 60; ranks top-20 for "virtual office" within 60 days of publish; 20+ qualified VO leads in first month post-launch.</div>
+          <div><span class="key">Metric:</span>live by Day 60; early ranking movement for "virtual office" within 60 days of publish; 20+ qualified VO leads as a stretch target.</div>
           <div><span class="key">Dependency:</span>product marketing input on VO pricing tiers, web dev (3 days).</div>
-          <div><span class="key">Why now:</span>3,000/mo standalone opportunity, Awfis already wins this term, and VO is a low-touch revenue line that maps cleanly to non-branded acquisition.</div>
+          <div><span class="key">Why now:</span>the audit suggests a 3,000/mo standalone opportunity where Virtual Office could map cleanly to non-branded acquisition.</div>
         </div>
       </div>
       <div class="action">
         <h4 class="action-name">Launch a paid LinkedIn acquisition test against Tier-1 enterprise decision-makers</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>₹2 lakh test budget; CPL under ₹3,500; 8+ booked enterprise demos in 30 days.</div>
+          <div><span class="key">Metric:</span>modelled ₹2 lakh test budget; CPL under ₹3,500 as a benchmark target; 8+ booked enterprise demos as a stretch target.</div>
           <div><span class="key">Dependency:</span>₹2L paid budget approval, HubSpot landing page setup.</div>
           <div><span class="key">Why now:</span>tests whether the LinkedIn organic traction from Days 1–30 converts under paid amplification, and gives a CAC benchmark before the Tier-2 pilot needs one.</div>
         </div>
@@ -745,7 +1295,7 @@ section.surface{background:var(--surface);}
       <div class="action">
         <h4 class="action-name">Internal linking overhaul across top 50 pages</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>200+ contextual internal links added; homepage traffic concentration drops from 100% to under 80%; 15+ secondary pages enter top-100 rankings.</div>
+          <div><span class="key">Metric:</span>200+ contextual internal links added; reduced homepage traffic concentration; 15+ secondary pages targeted for top-100 movement.</div>
           <div><span class="key">Dependency:</span>SEO contractor or 1 week of focused time.</div>
           <div><span class="key">Why now:</span>the audit's #7 priority but nearly free; compounds every other content asset shipped in Phase 1 and Phase 2.</div>
         </div>
@@ -753,7 +1303,7 @@ section.surface{background:var(--surface);}
       <div class="action">
         <h4 class="action-name">Publish 2 more blog posts in the cost/comparison cluster</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>live by Day 60; combined 800+ organic visits in first 30 days post-publish.</div>
+          <div><span class="key">Metric:</span>live by Day 60; 800+ organic visits as a modelled 30-day stretch target.</div>
           <div><span class="key">Dependency:</span>content writer or 1 week of focused time.</div>
           <div><span class="key">Why now:</span>Posts 1 and 2 will have proven the cluster works; doubling down is cheaper than starting a new content vertical.</div>
         </div>
@@ -762,25 +1312,25 @@ section.surface{background:var(--surface);}
 
     <div class="phase-content reveal" data-phase-content="3">
       <div class="action">
-        <h4 class="action-name">Kick off the Kochi pilot 90-day demand validation gate</h4>
+        <h4 class="action-name">Run a Kochi 90-day demand validation sprint</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>200+ qualified Infopark/Smartworld outreach contacts; 20+ priced LOI conversations; clear go/no-go signal (≥10% conversion on qualified outreach) by Day 90.</div>
+          <div><span class="key">Metric:</span>modelled target of 200+ qualified Infopark/Smartworld outreach contacts; 20+ priced LOI conversations; go/no-go signal using ≥10% qualified-outreach conversion as a working threshold.</div>
           <div><span class="key">Dependency:</span>real estate + sales coordination, ₹3L outbound + landing page budget.</div>
-          <div><span class="key">Why now:</span>the Deal Strategist's kill switch fires before fit-out spend; if signal is weak, the ₹16 cr redirects to Bengaluru centre #2 with no capex burned.</div>
+          <div><span class="key">Why now:</span>the validation gate happens before fit-out spend; if signal is weak, the modelled investment could be redirected to a stronger proven market.</div>
         </div>
       </div>
       <div class="action">
         <h4 class="action-name">Ship building/neighbourhood landing pages for top 10 tech parks</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>10 pages live by Day 90; ranking top-30 for at least 4 tech park keywords (8,100/mo opportunity from 3 keywords alone).</div>
+          <div><span class="key">Metric:</span>10 pages live by Day 90; top-50/top-30 movement for selected tech park keywords (8,100/mo opportunity from 3 keywords alone).</div>
           <div><span class="key">Dependency:</span>web dev (12 dev days), local content research.</div>
-          <div><span class="key">Why now:</span>Awfis is already capturing prestige skytech, dsl abacus, vios tower — every month WeWork delays, Awfis builds more authority on terms WeWork's centres physically sit inside.</div>
+          <div><span class="key">Why now:</span>Awfis appears to capture building-name demand today; dedicated pages could help WeWork compete where its centres already have physical relevance.</div>
         </div>
       </div>
       <div class="action">
         <h4 class="action-name">Launch Kochi pre-launch landing page + waitlist</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>300+ waitlist signups from Infopark-targeted outreach + paid; signups feed directly into the LOI pipeline above.</div>
+          <div><span class="key">Metric:</span>300+ waitlist signups as a modelled target from Infopark-targeted outreach + paid; signups feed into LOI qualification.</div>
           <div><span class="key">Dependency:</span>web dev (2 days), ₹1L paid budget.</div>
           <div><span class="key">Why now:</span>gives the Tier-2 demand validation a measurable digital surface and produces the priced LOI evidence the gating condition requires.</div>
         </div>
@@ -788,7 +1338,7 @@ section.surface{background:var(--surface);}
       <div class="action">
         <h4 class="action-name">Hand off content engine to a hired/contracted writer</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>1 new ranking-ready post published per week from Day 75 onward; in-house content time drops below 20%.</div>
+          <div><span class="key">Metric:</span>1 new ranking-ready post per week from Day 75 onward; in-house content time reduction tracked as an operating target.</div>
           <div><span class="key">Dependency:</span>1 hire or contractor (₹60K–₹80K/mo).</div>
           <div><span class="key">Why now:</span>the engine works in Phase 2; scaling it requires the operator off the keyboard and onto strategy by Day 90.</div>
         </div>
@@ -796,7 +1346,7 @@ section.surface{background:var(--surface);}
       <div class="action">
         <h4 class="action-name">Expand city pages to Pune, Hyderabad, Chennai, Gurgaon</h4>
         <div class="action-meta">
-          <div><span class="key">Metric:</span>all 4 live by Day 90; combined 800+ organic visits in first month.</div>
+          <div><span class="key">Metric:</span>all 4 live by Day 90; 800+ organic visits as a modelled first-month stretch target.</div>
           <div><span class="key">Dependency:</span>web dev (8 dev days).</div>
           <div><span class="key">Why now:</span>template exists from Phase 2, marginal cost per page is low, and these complete the Tier-1 city footprint before Q2 attention shifts to Tier-2.</div>
         </div>
@@ -804,7 +1354,7 @@ section.surface{background:var(--surface);}
     </div>
 
     <div class="pull-quote reveal">
-      By Day 90: non-branded organic traffic up from baseline ~9K/mo to a measurable 18K–22K/mo on a clear upward curve. Two blog posts ranking page 1 or 2. Seven city pages, ten building pages, and a rebuilt Virtual Office page live. 8+ enterprise demos sourced from LinkedIn paid. A Kochi pilot with either a green light backed by 50+ priced LOIs, or a clean kill and ₹16 cr redirected. One dashboard that tells the CMO every Monday whether the engine is accelerating or stalling.
+      By Day 90: a modelled target of non-branded organic traffic showing a directional lift from a ~9K/mo baseline. Two blog posts showing early ranking movement. Seven city pages, ten building pages, and a rebuilt Virtual Office page live. 8+ enterprise demo conversations targeted from LinkedIn paid. A Kochi pilot scenario with either a stronger green-light case backed by priced LOI conversations, or a disciplined pause where modelled investment could be redirected. One dashboard that tells the CMO every Monday whether the engine is accelerating or stalling.
     </div>
   </div>
 </section>
@@ -813,64 +1363,68 @@ section.surface{background:var(--surface);}
 <section id="campaign">
   <div class="container">
     <p class="eyebrow reveal">Campaign Concept</p>
+    <p class="takeaway reveal">The campaign explores one claim: Kochi is developing Tier-1 ambition, and workplace standards can reflect that growth.</p>
     <h2 class="section-h2 reveal">If WeWork launches Kochi — this is what runs.</h2>
     <p class="section-intro reveal">One product, one city, one claim: the building has finally caught up to the work.</p>
 
     <div class="concept-block reveal">
       <p class="concept-name">The Building Catches Up.</p>
-      <p class="concept-headline">Kochi's work grew up. Its workplace just did too.</p>
-      <p class="concept-support">WeWork opens in Kochi — the first enterprise-grade flex built for the GCCs and founders already here.</p>
+      <p class="concept-headline">Kochi is building at global speed. Its workplace should keep pace.</p>
+      <p class="concept-support">A potential WeWork Kochi launch positioned around enterprise-grade flex for the GCCs and founders already there.</p>
     </div>
 
     <div class="reveal">
       <div class="tabs" role="tablist">
-        <button class="tab active" data-tab="v1" role="tab">Variant 1 — The Standard, Finally Local</button>
-        <button class="tab" data-tab="v2" role="tab">Variant 2 — A Cleaner P&amp;L, A Faster Move</button>
-        <button class="tab" data-tab="v3" role="tab">Variant 3 — Build the Team, Not the Lease</button>
+        <button class="tab active" data-tab="v1" role="tab">GCC Leaders</button>
+        <button class="tab" data-tab="v2" role="tab">CEOs/CFOs</button>
+        <button class="tab" data-tab="v3" role="tab">Founders</button>
       </div>
 
-      <div class="tab-panel active" data-panel="v1">
+      <div class="tab-panel active" data-panel="v1" role="tabpanel">
+        <p class="variant-title">Variant 1 — The Standard, Finally Local</p>
         <dl class="variant-grid">
           <dt>Audience</dt>
           <dd>GCC India heads and global operations leaders evaluating Kochi for a captive build-out.</dd>
           <dt>Headline</dt>
           <dd class="headline">Your London board. Your Kochi floor. Same standard.</dd>
           <dt>Body</dt>
-          <dd>WeWork opens in Kochi with the same enterprise spec your teams use in Bengaluru, Mumbai and Manila. Signed by global firms across 50+ India centres. Now ready for the 120 GCCs Infopark Phase 3 is built to hold.</dd>
+          <dd>A potential WeWork Kochi centre framed around enterprise-grade flexible workspace for Kerala’s GCC pipeline.</dd>
           <dt>Proof point</dt>
-          <dd>120 GCCs targeted at Infopark by 2031.</dd>
+          <dd>Kerala’s GCC Playbook targets growth from 40 to 120 GCCs and 200,000 professionals by 2030. Source: Kerala GCC Playbook.</dd>
           <dt>Lead format</dt>
           <dd>LinkedIn document post + 1:1 BD outreach sequence to named GCC leaders.</dd>
         </dl>
       </div>
 
-      <div class="tab-panel" data-panel="v2">
+      <div class="tab-panel" data-panel="v2" role="tabpanel">
+        <p class="variant-title">Variant 2 — A Cleaner P&amp;L, A Faster Move</p>
         <dl class="variant-grid">
           <dt>Audience</dt>
           <dd>Mid-market Indian CEOs and CFOs (100–500 employees) sizing up a Kochi expansion or HQ shift.</dd>
           <dt>Headline</dt>
           <dd class="headline">Move to Kochi in 30 days. Not 9 months.</dd>
           <dt>Body</dt>
-          <dd>A WeWork Private Office in Kochi runs ₹15,000 a seat — fully fitted, fully serviced, fully off your balance sheet. No fit-out capex, no lease lock-in, no broker. Scale up or down by the floor.</dd>
+          <dd>A modelled WeWork Private Office in Kochi at ₹15,000 a seat: fully fitted, serviced, and positioned to reduce fit-out capex and lease friction. Scale up or down by the floor.</dd>
           <dt>Proof point</dt>
-          <dd>₹15,000 Private Office seat / ₹13,200 blended — and zero capex.</dd>
+          <dd>Modelled ₹15,000 Private Office seat / ₹13,200 blended; designed to reduce upfront fit-out capex and lease complexity. Exact accounting and terms vary by contract.</dd>
           <dt>Lead format</dt>
           <dd>60-second founder film + a gated TCO calculator landing page.</dd>
         </dl>
       </div>
 
-      <div class="tab-panel" data-panel="v3">
+      <div class="tab-panel" data-panel="v3" role="tabpanel">
+        <p class="variant-title">Variant 3 — Build the Team, Not the Lease</p>
         <dl class="variant-grid">
           <dt>Audience</dt>
           <dd>Series B+ founders running split teams between Bengaluru/Mumbai and Kochi.</dd>
           <dt>Headline</dt>
-          <dd class="headline">Hire in Kochi this quarter. Decide the lease never.</dd>
+          <dd class="headline">Hire in Kochi this quarter. Defer the lease decision.</dd>
           <dt>Body</dt>
-          <dd>All Access from ₹9,000 a seat across every WeWork in India. Land your Kochi engineering pod on Monday, plug into Bengaluru on Thursday, walk away in twelve months if the plan changes. The network is the perk.</dd>
+          <dd>A Kochi access product could test whether satellite teams and founders value national network flexibility without committing to a full private office.</dd>
           <dt>Proof point</dt>
-          <dd>₹9,000 All Access — 21% below the Tier-1 equivalent.</dd>
+          <dd>Official All Access Plus benchmark: ₹15,000 + tax/month; any Tier-2 access offer should be treated as a modelled pricing experiment. Source: WeWork India All Access Plus public pricing.</dd>
           <dt>Lead format</dt>
-          <dd>WhatsApp creative + founder-network landing page, seeded through Kerala Startup Mission and YC/Sequoia India alumni groups.</dd>
+          <dd>WhatsApp creative + founder-network landing page, with potential partner/community distribution subject to access and approval.</dd>
         </dl>
       </div>
     </div>
@@ -878,46 +1432,54 @@ section.surface{background:var(--surface);}
     <div class="channel-section reveal">
       <p class="dash-label">Channel mix</p>
       <div class="donut-wrap">
-        <svg class="donut-svg" viewBox="0 0 200 200" aria-label="Channel mix donut chart">
-          <circle class="seg" id="seg1" cx="100" cy="100" r="50" stroke="#534AB7" />
-          <circle class="seg" id="seg2" cx="100" cy="100" r="50" stroke="#7B73D4" />
-          <circle class="seg" id="seg3" cx="100" cy="100" r="50" stroke="#A89FE0" />
-          <circle class="seg" id="seg4" cx="100" cy="100" r="50" stroke="#C5C0ED" />
-          <circle class="seg" id="seg5" cx="100" cy="100" r="50" stroke="#E2DFF7" />
-          <circle cx="100" cy="100" r="32" fill="#FAFAFA" />
-          <text x="100" y="103" text-anchor="middle" class="donut-center-label">Channel Mix</text>
-        </svg>
-        <div class="legend">
-          <div class="legend-row">
+        <div class="donut-panel">
+          <svg class="donut-svg" viewBox="0 0 200 200" role="img" aria-label="Interactive channel mix donut chart">
+            <circle class="seg" id="seg1" data-channel="linkedin" cx="100" cy="100" r="50" stroke="#534AB7" tabindex="0" role="button" aria-label="LinkedIn organic and paid, 35 percent" />
+            <circle class="seg" id="seg2" data-channel="ooh" cx="100" cy="100" r="50" stroke="#7B73D4" tabindex="0" role="button" aria-label="OOH Kochi specific, 20 percent" />
+            <circle class="seg" id="seg3" data-channel="search" cx="100" cy="100" r="50" stroke="#A89FE0" tabindex="0" role="button" aria-label="Performance and Search, 15 percent" />
+            <circle class="seg" id="seg4" data-channel="pr" cx="100" cy="100" r="50" stroke="#C5C0ED" tabindex="0" role="button" aria-label="PR and earned media, 15 percent" />
+            <circle class="seg" id="seg5" data-channel="events" cx="100" cy="100" r="50" stroke="#E2DFF7" tabindex="0" role="button" aria-label="Direct outreach and events, 15 percent" />
+            <circle cx="100" cy="100" r="32" fill="#FAFAFA" />
+            <text x="100" y="94" text-anchor="middle" class="donut-center-label" id="donutCenterName">LinkedIn</text>
+            <text x="100" y="119" text-anchor="middle" class="donut-center-pct" id="donutCenterPct">35%</text>
+          </svg>
+          <div class="channel-active" aria-live="polite">
+            <span id="channelActivePct">35% of mix</span>
+            <strong id="channelActiveName">LinkedIn (organic + paid)</strong>
+            <p id="channelActiveCopy">Highest-intent reach for GCC leaders, CFOs and Series B+ founders; carries the document post, founder film and ABM retargeting.</p>
+          </div>
+        </div>
+        <div class="legend" role="listbox" aria-label="Channel mix options">
+          <button class="legend-row" type="button" data-channel="linkedin" aria-selected="true">
             <span class="legend-dot" style="background:#534AB7;"></span>
             <span class="legend-name">LinkedIn (organic + paid)</span>
             <span class="legend-pct">35%</span>
             <span class="legend-rationale">Highest-intent reach for GCC leaders, CFOs and Series B+ founders; carries the document post, founder film and ABM retargeting.</span>
-          </div>
-          <div class="legend-row">
+          </button>
+          <button class="legend-row" type="button" data-channel="ooh" aria-selected="false">
             <span class="legend-dot" style="background:#7B73D4;"></span>
             <span class="legend-name">OOH (Kochi-specific)</span>
             <span class="legend-pct">20%</span>
             <span class="legend-rationale">Geo-fenced to Infopark Phase 1 entry, Kakkanad corridor and airport arrivals — the three roads every target audience drives daily.</span>
-          </div>
-          <div class="legend-row">
+          </button>
+          <button class="legend-row" type="button" data-channel="search" aria-selected="false">
             <span class="legend-dot" style="background:#A89FE0;"></span>
             <span class="legend-name">Performance / Search</span>
             <span class="legend-pct">15%</span>
-            <span class="legend-rationale">Captures intent on "office space Kochi," "Infopark coworking," "GCC setup Kochi" — narrow, conversion-led, not a brand spend.</span>
-          </div>
-          <div class="legend-row">
+            <span class="legend-rationale">Captures intent on "office space Kochi," "Infopark coworking," "GCC setup Kochi" — narrow and conversion-led.</span>
+          </button>
+          <button class="legend-row" type="button" data-channel="pr" aria-selected="false">
             <span class="legend-dot" style="background:#C5C0ED;"></span>
             <span class="legend-name">PR / Earned media</span>
             <span class="legend-pct">15%</span>
-            <span class="legend-rationale">Anchors the "first premium flex in Kochi" narrative in ET, Mint, YourStory and BusinessLine ahead of the centre opening.</span>
-          </div>
-          <div class="legend-row">
+            <span class="legend-rationale">Anchors the "premium flex for Kochi’s GCC pipeline" narrative in ET, Mint, YourStory and BusinessLine ahead of the centre opening.</span>
+          </button>
+          <button class="legend-row" type="button" data-channel="events" aria-selected="false">
             <span class="legend-dot" style="background:#E2DFF7;"></span>
             <span class="legend-name">Direct outreach / Events</span>
             <span class="legend-pct">15%</span>
-            <span class="legend-rationale">A founder dinner at the centre, an Infopark CEO breakfast, and a 200-name BD list — this is where signed LOIs come from.</span>
-          </div>
+            <span class="legend-rationale">A founder dinner at the centre, an Infopark CEO breakfast, and a 200-name BD list — intended to support priced LOI conversations.</span>
+          </button>
         </div>
       </div>
     </div>
@@ -927,7 +1489,7 @@ section.surface{background:var(--surface);}
 <!-- 6. CLOSE -->
 <section class="dark" id="close">
   <div class="container">
-    <h2 class="close-line reveal">Open to the right role on the WeWork India marketing team.</h2>
+    <h2 class="close-line reveal">I’d welcome the chance to discuss how this thinking could support WeWork India’s growth team.</h2>
     <div class="contact-row reveal">
       <div>
         <span class="contact-label">Email</span>
@@ -942,15 +1504,14 @@ section.surface{background:var(--surface);}
         <a href="https://public.tableau.com/app/profile/bhavya.kaushal8300/vizzes" target="_blank" rel="noopener">Tableau Public Profile</a>
       </div>
     </div>
-    <p class="close-quiet reveal">All analysis and dashboards are live and publicly accessible on Tableau Public.</p>
-    <p class="close-built reveal">Built with vanilla HTML &middot; CSS &middot; JS — no frameworks &middot; April 2026</p>
+    <p class="close-quiet reveal">I’m looking for marketing, growth, SEO/content, or strategy roles where commercial analysis turns into execution. All analysis and dashboards are live and publicly accessible on Tableau Public.</p>
   </div>
 </section>
 
 <!-- Markdown content stash (raw) -->
 <script type="text/markdown" id="md-1">
 # wework.co.in — SEO as a Growth Acquisition Problem
-**Date:** April 28, 2026 | **Data source:** Ahrefs organic keyword export + competitor analysis
+**Date:** April 28, 2026 | **Data source:** Ahrefs sampled keyword export and Organic Competitors, India, 27 Apr 2026
 
 ---
 
@@ -958,22 +1519,24 @@ section.surface{background:var(--surface);}
 
 | Domain | Monthly Traffic | DR | Keyword Overlap w/ WeWork | Gap vs WeWork |
 |---|---|---|---|---|
-| jll.co.in | 154,700 | 60 | 5,815 | +122,700 |
-| cofynd.com | 94,000 | 38 | 4,951 | +62,000 |
-| myhq.in | 105,900 | 54 | high | +73,900 |
+| jll.co.in | ~154.7K | 60 | 5,835 | Source: Ahrefs Organic Competitors, India, 27 Apr 2026 |
+| cofynd.com | ~94.0K | 38 | 4,951 | Source: Ahrefs Organic Competitors, India, 27 Apr 2026 |
+| myhq.in | ~105.9K | 54 | not used as overlap claim | Source: Ahrefs Organic Competitors, India, 27 Apr 2026 |
 | wework.co.in | ~32,000 | 46 | — | baseline |
 
-WeWork shares nearly 5,000 keywords with Cofynd — a DR 38 site — and Cofynd still drives 3x the traffic. With equal or higher domain authority than Cofynd, WeWork's gap is entirely a content architecture problem, not a backlink problem. Every one of the 122,700 monthly visits JLL earns from keywords WeWork also shows up for is a missed acquisition touch.
+Cofynd shows 4,951 overlapping keywords, DR 38, and ~94.0K organic traffic in Ahrefs for the selected India view/date range. Source: Ahrefs Organic Competitors, India, 27 Apr 2026. With equal or higher domain authority than Cofynd, WeWork's gap is likely driven in large part by content architecture, not only backlinks. JLL shows 5,835 overlapping keywords, DR 60, and ~154.7K organic traffic in Ahrefs for the selected India view/date range. Source: Ahrefs Organic Competitors, India, 27 Apr 2026.
 
 ---
 
 ## Section 2 — Branded vs Non-Branded Breakdown
 
-**Branded keyword volume (contains "wework"):** ~46,300/month
-**Non-branded keyword volume:** ~19,200/month
-**Branded share: 71%**
+**Branded keyword volume (contains "wework"):** sampled Ahrefs export, India, 27 Apr 2026
+**Non-branded keyword volume:** sampled Ahrefs export, India, 27 Apr 2026
+**Branded share: ~67% in sampled Ahrefs keyword set**
 
-71% of WeWork's organic keyword volume is brand recall, not discovery — meaning SEO is currently functioning as a navigation tool for people who already chose WeWork, not as an acquisition channel. A competitor brand campaign or a single negative news cycle that suppresses brand search drops total organic traffic with no non-branded floor to catch it.
+Source: Ahrefs sampled keyword export, India, 27 Apr 2026.
+
+~67% of WeWork's sampled organic keyword volume is brand recall, not discovery — meaning SEO is currently functioning as a navigation tool for people who already chose WeWork, not as an acquisition channel. A competitor brand campaign or a single negative news cycle that suppresses brand search drops total organic traffic with no non-branded floor to catch it.
 
 ---
 
@@ -981,22 +1544,22 @@ WeWork shares nearly 5,000 keywords with Cofynd — a DR 38 site — and Cofynd 
 
 **Gap 1: Location-specific coworking city pages**
 - Competitor winning: awfis.com (47,100/month traffic)
-- Keyword cluster: "coworking space in bangalore" (1,200/mo), "coworking space in noida" (1,400/mo), "coworking space in mumbai" [VERIFY — est. 1,500–2,000/mo]
-- Monthly traffic opportunity: 4,100–5,600/month across top 3 cities at rank 5
+- Keyword cluster: "coworking space in bangalore" (1.2K/mo), "coworking space in noida" (1.4K/mo), plus additional city terms from the sampled Ahrefs export.
+- Modelled SEO upside: 4,100–5,600/month across top 3 cities at rank 5; not a forecast
 - Search intent: Commercial — location-specific, high purchase proximity
 - Content format to capture: Dedicated city landing pages (e.g., `/coworking-space-bangalore/`) with LocalBusiness schema, above-fold CTA, centre listings with map embed, pricing anchor, enterprise client social proof per city. One page per city minimum; Bengaluru and Noida are confirmed highest-volume entries.
 
 **Gap 2: Virtual Office product keyword**
 - Competitor winning: awfis.com (47,100/month traffic)
-- Keyword cluster: "virtual office" (3,000/mo), "virtual office india" [VERIFY], "virtual office address" [VERIFY]
-- Monthly traffic opportunity: ~900–1,200/month at rank 5 on "virtual office" alone
+- Keyword cluster: "virtual office" (3.0K/mo), plus related virtual-office terms from the sampled Ahrefs export.
+- Modelled SEO upside: ~900–1,200/month at rank 5 on "virtual office" alone; not a forecast
 - Search intent: Commercial — product-specific, decision-stage buyer
 - Content format to capture: Standalone product page at `/virtual-office/` with keyword in title tag, H1, and meta description; city-level sub-sections ("Virtual Office in Bengaluru / Mumbai / Delhi"); pricing table; FAQ schema. WeWork sells this product today. Awfis ranks for the keyword. WeWork does not appear in the keyword data for it at all.
 
 **Gap 3: Building and tech-park neighbourhood search**
 - Competitor winning: awfis.com (47,100/month traffic)
-- Keyword cluster: "prestige skytech" (5,000/mo), "dsl abacus it park" (1,500/mo), "vios tower" (1,600/mo)
-- Monthly traffic opportunity: 8,100/month across these three terms alone; WeWork has 68+ centres in comparable premium buildings
+- Keyword cluster: three building-name keywords in the Ahrefs sample total ~8.1K monthly searches: prestige skytech, dsl abacus it park, and vios tower. Source: Ahrefs keyword sample, India, 27 Apr 2026.
+- Modelled SEO upside: 8,100/month across these three terms alone; WeWork has a broad premium-building footprint, subject to latest centre verification
 - Search intent: Local / Commercial — near-decision users who have already chosen a geography and are comparing workspace options within a building or tech park
 - Content format to capture: Building-level or neighbourhood landing pages (e.g., `/coworking-whitefield-bengaluru/`, `/office-space-cyber-city-gurugram/`) embedded within city page architecture; targeting the building name + "coworking" or "office space" in title tag and H1. This is Awfis's single most defensible traffic advantage — it is also directly replicable given WeWork's premium building presence.
 
@@ -1006,33 +1569,33 @@ WeWork shares nearly 5,000 keywords with Cofynd — a DR 38 site — and Cofynd 
 
 **Blog Post 1:**
 Title: Coworking Space vs Traditional Office in India: The Real Cost Breakdown for 2026
-Target keyword: "coworking space" — 4,400/month
-Angle: WeWork has signed ICICI Bank and Grant Thornton as enterprise clients — actual enterprise deal data on cost-per-seat versus traditional leasing is an asset Awfis and Cofynd cannot credibly claim. This is not opinion; it is a data argument from India's largest coworking operator.
-Traffic estimate at rank 5: ~880–1,320/month (20–30% CTR band at position 5 on 4,400 volume)
+Target keyword: "coworking space" — 4.4K/month. Source: Ahrefs sampled keyword export, India, 27 Apr 2026.
+Angle: WeWork has publicly referenced enterprise clients such as ICICI Bank and Grant Thornton; any client-specific proof point should be verified before publication. This is not opinion; it is a data argument from India's largest coworking operator.
+Modelled SEO upside: ~880–1,320/month at rank 5 using a 20–30% CTR assumption; not a forecast.
 Internal link targets: `/virtual-office/`, `/managed-offices/`, city landing pages for Bengaluru and Mumbai
 
 **Blog Post 2:**
 Title: Best Office Space in Bengaluru 2026: Neighbourhood-by-Neighbourhood Guide (Whitefield, Outer Ring Road, CBD)
-Target keyword: "office space" — 2,700/month; secondary: "coworking space in bangalore" — 1,200/month
-Angle: WeWork has 15+ centres in Bengaluru spread across every major micro-market — no aggregator or competitor can produce a guide with this level of first-party, on-the-ground accuracy. JLL drives 154,700 monthly visits partly on guides like this; WeWork has the data and the brand to compete directly.
-Traffic estimate at rank 5: ~540–810/month on "office space" + ~240–360/month on Bengaluru term = ~780–1,170/month combined
+Targets “office space” (2.7K/month) and “coworking space in bangalore” (1.2K/month), based on the sampled Ahrefs keyword export. Source: Ahrefs sampled keyword export, India, 27 Apr 2026.
+Angle: WeWork has 15+ centres in Bengaluru spread across every major micro-market — no aggregator or competitor can produce a guide with this level of first-party, on-the-ground accuracy. JLL shows ~154.7K organic traffic in Ahrefs for the selected India view/date range. Source: Ahrefs Organic Competitors, India, 27 Apr 2026. WeWork has first-party market knowledge that could support a stronger guide.
+Modelled SEO upside: ~540–810/month on "office space" + ~240–360/month on Bengaluru term = ~780–1,170/month combined at rank 5; not a forecast.
 Internal link targets: Bengaluru city landing page, individual centre pages in Whitefield / ORR / CBD, WeWork All Access product page
 
 ---
 
 ## Section 5 — Prioritised Action List
 
-1. **Publish Blog Post 1 (coworking cost breakdown)** | Targets 4,400/month keyword; feeds virtual office and managed office conversion pages; first mover on informational intent where JLL and Cofynd earn the bulk of their traffic | Owner: content + CMO sign-off | Timeline: Week 1–2 of May
+1. **Publish Blog Post 1 (coworking cost breakdown)** | Targets 4.4K/month keyword from Ahrefs sampled keyword export, India, 27 Apr 2026; feeds virtual office and managed office conversion pages; first mover on informational intent where JLL and Cofynd earn the bulk of their traffic | Owner: content + CMO sign-off | Timeline: Week 1–2 of May
 
-2. **Publish Blog Post 2 (Bengaluru office space guide)** | Targets 2,700 + 1,200/month keyword cluster; directly challenges JLL's informational dominance (5,815 keyword overlap) at the highest-volume WeWork city | Owner: content + Bengaluru market team for data | Timeline: Week 2–3 of May
+2. **Publish Blog Post 2 (Bengaluru office space guide)** | Targets 2.7K + 1.2K/month keyword cluster from Ahrefs sampled keyword export, India, 27 Apr 2026; directly challenges JLL's informational presence (5,835 overlapping keywords in the selected Ahrefs view) at the highest-volume WeWork city | Owner: content + Bengaluru market team for data | Timeline: Week 2–3 of May
 
-3. **Build city landing pages for Bengaluru, Noida, Mumbai** | 4,100–5,600/month combined traffic opportunity from confirmed Awfis-winning keywords; DR parity with Awfis (both 46) means WeWork can compete immediately with correct on-page targeting; each page also lifts partially-branded queries like "wework noida" (900/mo) by giving Google a dedicated indexed page | Owner: SEO + web | Timeline: May (launch all three before June)
+3. **Build city landing pages for Bengaluru, Noida, Mumbai** | 4,100–5,600/month modelled SEO upside from reviewed Awfis-winning keywords; DR parity with Awfis suggests WeWork could compete with stronger on-page targeting; each page also lifts partially-branded queries like "wework noida" (900/mo) by giving Google a dedicated indexed page | Owner: SEO + web | Timeline: May (launch all three before June)
 
-4. **Rebuild the Virtual Office product page** | 3,000/month keyword, WeWork sells the product, Awfis ranks for it, WeWork does not appear in keyword data — this is revenue leaving the site | Owner: product marketing + SEO | Timeline: May
+4. **Rebuild the Virtual Office product page** | 3,000/month keyword, WeWork sells the product, Awfis ranks for it, WeWork does not appear in the reviewed keyword data — this is potential demand leakage to investigate | Owner: product marketing + SEO | Timeline: May
 
-5. **Create building/neighbourhood landing pages for top 10 tech parks** | Awfis earns 8,100/month from three building-name keywords alone; WeWork occupies equivalent or superior buildings; 10 pages targeting Prestige Skytech, Cyber City, Bandra-Kurla Complex, Hiranandani, etc. can unlock 5,000–12,000/month at similar rank distributions [VERIFY individual building volumes] | Owner: local market leads + SEO | Timeline: June
+5. **Create building/neighbourhood landing pages for top 10 tech parks** | Three building-name keywords in the Ahrefs sample total ~8.1K monthly searches; WeWork occupies equivalent or superior buildings; 10 pages targeting Prestige Skytech, Cyber City, Bandra-Kurla Complex, Hiranandani, etc. could unlock 5,000–12,000/month in modelled upside at similar rank distributions based on sampled building-keyword volumes | Owner: local market leads + SEO | Timeline: June
 
-6. **Expand city pages to Pune, Hyderabad, Chennai, Gurgaon** | Each city carries est. 600–1,500/month on "coworking space in [city]" [VERIFY]; collectively 3,000–5,000/month across 4 cities; also pre-empts Tier-2 expansion (Jaipur, Indore, Kochi — build pages before centre launch, ranking takes 60–90 days) | Owner: SEO | Timeline: June–July
+6. **Expand city pages to Pune, Hyderabad, Chennai, Gurgaon** | Each city carries est. 600–1,500/month on "coworking space in [city]" ; collectively 3,000–5,000/month across 4 cities; also pre-empts Tier-2 expansion (Jaipur, Indore, Kochi — build pages before centre launch, ranking takes 60–90 days) | Owner: SEO | Timeline: June–July
 
 7. **Internal linking overhaul: connect all new pages to homepage** | Homepage carries 32,187 organic visits and all of the site's link equity; none of it is currently flowing to city or product pages at scale — fixing this costs nothing and accelerates ranking for every page built in actions 3–6 | Owner: web/SEO | Timeline: Concurrent with page launches
 </script>
@@ -1094,11 +1657,11 @@ Current market rates across major Indian metros for a managed private office sea
 - Gurugram (Cyber City, Golf Course Road): ₹11,000–17,000/seat/month
 - Hyderabad (Hitech City, Madhapur): ₹9,000–13,000/seat/month
 
-WeWork India's average seat price of ₹16,739/month sits in the premium end of that range — a pricing decision that reflects building quality, location portfolio, and the enterprise services layered on top.
+The estimated ₹16,739/month average seat price sits in the premium end of that range — a pricing decision that reflects building quality, location portfolio, and the enterprise services layered on top.
 
 **Upfront capital:**
 
-- Security deposit: One to three months' seat cost. For a 50-seat team at ₹16,739/seat, the maximum exposure is approximately ₹25 lakh — comparable to a six-month deposit on a traditional lease, but without the fit-out capital sitting next to it.
+- Security deposit: One to three months' seat cost. For a 50-seat team using the estimated ₹16,739/seat benchmark, the maximum exposure is approximately ₹25 lakh — comparable to a six-month deposit on a traditional lease, but without the fit-out capital sitting next to it.
 - Fit-out capex: Zero. The space is ready when you sign.
 - Brokerage: Typically zero.
 
@@ -1106,7 +1669,7 @@ WeWork India's average seat price of ₹16,739/month sits in the premium end of 
 
 **Exit exposure:** Notice periods of one to three months. No reinstatement obligation. No stranded capex.
 
-[WeWork All Access](https://wework.co.in/all-access) extends this further — a single membership that gives a team member access to any of WeWork's 68+ India centres. For organisations with people in multiple cities, or teams that are not fully in-office five days a week, this replaces the logic of per-city traditional leases entirely.
+[WeWork All Access](https://wework.co.in/all-access) extends this further — a single membership model for accessing the WeWork network. Official All Access Plus benchmark: ₹15,000 + tax/month; any Tier-2 access offer should be treated as a modelled pricing experiment. Source: WeWork India All Access Plus public pricing. For organisations with people in multiple cities, or teams that are not fully in-office five days a week, this replaces the logic of per-city traditional leases entirely.
 
 ---
 
@@ -1246,7 +1809,7 @@ The trade-offs are real and specific. CBD is the most expensive per sqft in the 
 
 **2. Is this office client-facing or internal?** If clients will visit weekly or more often — for pitches, reviews, or meetings that shape the relationship — address and surrounding infrastructure matter. CBD and select ORR locations serve that need well.
 
-**3. What is your headcount trajectory over 24 months?** If you are at 40 people today and likely to be at 150 in two years, a traditional lease in the "right" neighbourhood now commits you to a floor plate that either runs out at 80 people or costs you for 150 seats you do not yet have. WeWork All Access is a practical answer to the in-between phase — one membership that works across all WeWork locations in the city.
+**3. What is your headcount trajectory over 24 months?** If you are at 40 people today and likely to be at 150 in two years, a traditional lease in the "right" neighbourhood now commits you to a floor plate that either runs out at 80 people or costs you for 150 seats you do not yet have. WeWork All Access can be a practical answer to the in-between phase; official All Access Plus pricing should be used as the benchmark before modelling any Tier-2 access offer.
 
 ---
 
@@ -1259,20 +1822,22 @@ WeWork operates 15+ centres across Bengaluru, which means a tour can happen wher
 
 <script type="text/markdown" id="md-4">
 # WeWork India — LinkedIn Content Series
-**Project:** WeWork India Entry-Level Marketing Role — Work Sample
+**Project:** WeWork India Marketing Role — Independent Work Sample
+
+**Note:** Draft social concepts only. These are not approved posts and are not written on behalf of WeWork or its executives.
 **Posts:** 5 total
 
 ---
 
 ## Post 1 — Tier-2 City Opportunity
 
-Kochi's Infopark has 582 companies and 72,000 white-collar employees operating right now. Not projected. Not planned. Operating.
+Kochi's Infopark reports 582 companies and 72,000 white-collar employees operating today. Source: Infopark/public reporting.
 
-The flex operators already there are priced at ₹6,000–₹12,000 per seat. No premium operator above ₹15,000 has entered the market.
+The reviewed flex operators appear priced at roughly ₹6,000–₹12,000 per seat; a ₹15,000 private-office benchmark is treated as a modelled premium scenario.
 
 That gap is not an oversight. It's timing. The enterprise cluster exists. The infrastructure is built. A third phase — 300 acres, government-backed, targeting GCCs — is underway.
 
-The usual argument for Tier-2 expansion is startup density. Kochi makes a different argument: an enterprise base that already behaves like a Tier-1 market, priced like it doesn't know that yet.
+The usual argument for Tier-2 expansion is startup density. Kochi could make a different argument: an enterprise base that may support a premium flex test.
 
 If you work in flex space or commercial real estate in South India — what's your read on Kochi's enterprise absorption capacity?
 
@@ -1286,11 +1851,11 @@ cofynd.com has a lower domain authority than wework.co.in. It also pulls three t
 
 I ran an Ahrefs audit on wework.co.in. Total organic keywords: 2,107. Branded terms — "wework," "wework india," "wework gurgaon" — account for 71% of that. The homepage alone draws 32,187 visits. Location pages: near zero.
 
-Cofynd overlaps with WeWork on 4,951 keywords and extracts 94,000 monthly visits from that pool. WeWork extracts roughly a third of that.
+Cofynd shows 4,951 overlapping keywords, DR 38, and ~94.0K organic traffic in Ahrefs for the selected India view/date range.
 
 This is not a backlink problem. Two sites, similar authority, same keyword universe — the gap is page architecture. Cofynd has built city landing pages, product pages, and location-specific content that rank. WeWork does not have equivalent pages indexed.
 
-The traffic is going somewhere. Right now it's going to a competitor with less authority and a weaker product.
+The traffic is going somewhere. Right now it is going to a lower-authority competitor with stronger search coverage.
 
 What's the SEO gap in your industry that a lower-authority competitor is winning?
 
@@ -1300,15 +1865,15 @@ What's the SEO gap in your industry that a lower-authority competitor is winning
 
 ## Post 3 — CMO, WeWork India: Premium Positioning vs Coverage Trade-off
 
-WeWork India operates 68+ centres across 8 cities. Awfis operates 257 centres across 18. The comparison gets made often, as if footprint is the only scorecard.
+Based on reviewed public/company data, WeWork India: 73 centres across 8 cities. Source: WeWork India Q3 FY26 investor presentation / media release. Awfis: 257 centres, ~177K seats, across 18 cities. Source: Awfis Q3 FY26 investor presentation / press release. The comparison gets made often, as if footprint is the only scorecard.
 
-Our average seat price is ₹16,739 per month. The Tier-2 flex market runs ₹6,000–₹12,000. We are not competing for the same client.
+Draft executive-voice line using the model input: average seat price is ₹16,739 per month. The Tier-2 flex market runs ₹6,000–₹12,000. We are not competing for the same client.
 
 Seventy percent of our business is enterprise — ICICI Bank, Grant Thornton, and clients like them. These are organisations making multi-year real estate decisions. They are not choosing between us and the nearest coworking option on a price-per-desk basis. They are choosing a partner who can absorb 500 seats, maintain Grade A standards, and flex with their headcount.
 
 A model built for that client looks different from a model built for volume. Fewer locations. Higher investment per location. A product layer — WeWork Workplace — that manages the workspace relationship beyond the physical desk.
 
-The enterprise-first bet is deliberate. Revenue quality over location count.
+The enterprise-first positioning appears deliberate: revenue quality over location count.
 
 For enterprise real estate leaders: how is your organisation thinking about flex as a long-term strategy versus a stopgap?
 
@@ -1324,7 +1889,7 @@ Coworking leasing dropped 43% in April 2025 alone. One month. The multi-year tre
 
 What drives that swing? SMB and startup demand is sentiment-sensitive. When funding tightens or uncertainty rises, month-to-month leasing decisions compress fast. Enterprise demand moves differently. Headcount cycles, not market mood. Agreements that run years, not months.
 
-WeWork India's book is 70% enterprise. That is not a coincidence of who walked through the door — it is the result of building a product, a pricing model, and a sales process oriented toward that client specifically.
+WeWork India Q3 FY26 media release indicates ~74% enterprise revenue contribution. That is not a coincidence of who walked through the door — it is the result of building a product, a pricing model, and a sales process oriented toward that client specifically.
 
 The operators most exposed to April's drop are the ones with thin enterprise share and high dependence on short-cycle SMB leasing. The 48% headline masks that divergence.
 
@@ -1336,15 +1901,15 @@ Growth is real. It is also uneven. I'm curious where other enterprise real estat
 
 ## Post 5 — Week One at WeWork India's Marketing Team
 
-I audited wework.co.in on Ahrefs. If I joined the marketing team Monday, here is what I would fix first.
+I audited wework.co.in on Ahrefs. If I joined the marketing team Monday, these are the opportunities I would want to investigate first.
 
 1. Build city landing pages for Bengaluru, Noida, and Mumbai. Awfis ranks for "coworking space in bangalore" (1,200 searches/month) and "coworking space in noida" (1,400/month). WeWork operates centres in both cities and does not appear in either keyword. The pages do not exist.
 
 2. Rebuild the Virtual Office product page. "Virtual office" gets 3,000 searches per month. Awfis ranks for it. WeWork sells the product. WeWork does not appear in the keyword data — because the page is not built to rank.
 
-3. Fix internal linking from the homepage. The homepage pulls 32,187 visits per month. Almost no link equity flows to location or product pages. All that authority sits in one place and does nothing for the rest of the site.
+3. Fix internal linking from the homepage. The homepage is estimated to pull 32,187 visits per month. Link equity flow to location or product pages should be verified in Search Console and crawl data.
 
-None of these require new content strategy. They require existing products to have pages that are findable.
+The common thread is findability: making existing products and locations easier to discover through the pages buyers already search for.
 
 WeWork marketers or SEO leads — what would you add, or push back on?
 
@@ -1352,25 +1917,27 @@ WeWork marketers or SEO leads — what would you add, or push back on?
 </script>
 
 <script type="text/markdown" id="md-5">
-# WeWork India — Tier-2 Pilot: Kochi
+# WeWork India — Tier-2 Pilot Scenario: Kochi
 
-## The Ask
-Approve ₹16 cr (₹14 cr fit-out + ₹2 cr lease deposit) to launch a 500-seat WeWork centre at Brigade WTC Kakkanad / WTC Infopark, Kochi, with a Q4 2026 opening.
+## The Modelled Scenario
+Model a potential ₹16 cr case (₹14 cr fit-out + ₹2 cr lease deposit) for a 500-seat WeWork centre at Brigade WTC Kakkanad / WTC Infopark, Kochi, with a Q4 2026 opening assumption.
+
+**Label:** Modelled scenario / assumption for pilot modelling, not an internal WeWork proposal.
 
 ## The Opportunity
-Infopark Kochi has 582 companies and 72,000 white-collar employees operating today, flex operators are absorbing 30% of Kochi's quarterly office leasing (CBRE 2025), and no operator in the city is priced above ₹12,000/seat — leaving the >₹13,000 premium tier completely unowned. Infopark Phase 3 (300 acres, ₹25,000 cr, GCC-targeted) and the projected 120 GCCs statewide by 2031 give a structural multi-year demand tailwind that the existing mid-market operators (Awfis, IndiQube, Smartworks) are not built to serve at WeWork's spec.
+Infopark Kochi has 582 companies and 72,000 white-collar employees operating today, flex operators are absorbing 30% of Kochi's quarterly office leasing (CBRE 2025), and no operator in the reviewed set appears priced above ₹12,000/seat — suggesting the >₹13,000 premium tier may be underdeveloped. Infopark Phase 3 / Integrated AI Township, 300+ acres in Ernakulam district, and Kerala’s GCC Playbook target of growth from 40 to 120 GCCs and 200,000 professionals by 2030 give a structural multi-year demand tailwind that may create room for a more premium flex proposition. Source: Infopark announcement. Source: Kerala GCC Playbook.
 
 ## The Pilot
-City: Kochi (Kakkanad / Infopark zone) | Centre size: 500 seats / ~40,000 sqft | Location: Brigade WTC Kakkanad or WTC Infopark (LEED Gold), Grade A confirmed | Product mix: 70% Private Office (350 seats) / 30% All Access (150 seats) | Launch target: Q4 2026 (12-month fit-out + lease window from approval)
+**Model inputs:** City: Kochi (Kakkanad / Infopark zone) | Centre size: 500 seats / ~40,000 sqft | Candidate location: Brigade WTC Kakkanad or WTC Infopark | Grade A / LEED Gold assumption, subject to site validation | Product mix assumption: 70% Private Office (350 seats) / 30% All Access (150 seats) | Launch timing assumption: Q4 2026
 
 ## Unit Economics
 
-**Shared assumptions:** Lease ₹85/sqft × 40,000 sqft = ₹34L/mo + ~15% CAM/utilities = **₹39L/mo occupancy**. Fixed opex floor ₹51L/mo (occupancy ₹39L + staff 10 FTE @ ₹80K loaded ₹8L + marketing/corporate allocation ₹4L). Variable opex ₹1,500/occupied seat/mo. Fit-out ₹3,500/sqft × 40,000 = ₹14 cr. Deposit 6 months rent ≈ ₹2 cr.
+**Shared assumptions / modelled scenario:** Lease ₹85/sqft × 40,000 sqft = ₹34L/mo + ~15% CAM/utilities = **₹39L/mo occupancy**. Fixed opex floor ₹51L/mo (occupancy ₹39L + staff 10 FTE @ ₹80K loaded ₹8L + marketing/corporate allocation ₹4L). Variable opex ₹1,500/occupied seat/mo. Fit-out ₹3,500/sqft × 40,000 = ₹14 cr. Deposit 6 months rent ≈ ₹2 cr.
 
 ### Base Case
-Pilot pricing: Private Office ₹15,000/seat, All Access ₹9,000/seat. Blended ₹13,200/seat (≈21% below WeWork Tier-1 ₹16,739; still 10–50% above Kochi mid-market ₹6K–₹12K).
+Pilot pricing assumption: Modelled ₹15,000 private office seat benchmark; final pricing would require internal validation. Official All Access Plus benchmark: ₹15,000 + tax/month; any Tier-2 access offer should be treated as a modelled pricing experiment. Source: WeWork India All Access Plus public pricing.
 
-100% revenue ceiling: 350 × ₹15,000 + 150 × ₹9,000 = ₹52.5L + ₹13.5L = **₹66L/mo**.
+100% revenue ceiling uses modelled private-office and access assumptions and should be recalculated after internal pricing validation.
 
 | Period | Occupancy | Seats | Revenue/mo | Opex/mo | Net/mo |
 |---|---|---|---|---|---|
@@ -1383,7 +1950,7 @@ Fit-out capex: ₹14 cr (one-time) | Lease deposit: ₹2 cr
 Breakeven (monthly P&L): **Month 17** | 18-month cumulative operating: **-₹2.15 cr** | Total cash out by M18 incl. capex: **-₹16.15 cr**.
 
 ### Downside Case
-20% lower occupancy at every stage + price floor (PO ₹13,000 / AA ₹7,500; blended ₹11,350 — required to defend against Awfis/IndiQube undercut).
+20% lower occupancy at every stage + modelled price floor (PO ₹13,000 / AA ₹7,500; blended ₹11,350) as a downside stress test.
 
 100% revenue ceiling: ₹56.75L/mo.
 
@@ -1394,29 +1961,29 @@ Breakeven (monthly P&L): **Month 17** | 18-month cumulative operating: **-₹2.1
 | Month 7–12 | 60% | 300 | ₹34.05L | ₹55.5L | -₹21.45L |
 | Month 13–18 | 70% | 350 | ₹39.7L | ₹56.25L | -₹16.55L |
 
-Breakeven: **Not reached in 18 months** | 18-month cumulative operating: **-₹4.46 cr** | Total cash out by M18 incl. capex: **-₹18.46 cr**. Decision gate at Month 12: if occupancy <55%, reduce footprint or convert one floor zone to managed-office for a single anchor tenant.
+Breakeven: **Not reached in 18 months** | 18-month cumulative operating: **-₹4.46 cr** | Total cash out by M18 incl. capex: **-₹18.46 cr**. Modelled decision gate at Month 12: if occupancy is below 55%, evaluate reducing footprint or converting one floor zone to managed-office for a single anchor tenant.
 
 ## Pricing Posture
-Recommend **Private Office ₹15,000 / All Access ₹9,000 (blended ₹13,200)** at launch — a 21% discount off Tier-1 to acknowledge Kochi's price ceiling, while holding a clear premium over the entire competitive set (none priced >₹12,000). Hard floor on Private Office is ₹13,000; below that the centre cannot service capex within 36 months.
+Model uses a **₹15,000 private office seat benchmark** as the launch pricing assumption; final pricing would require internal validation. Official All Access Plus benchmark: ₹15,000 + tax/month; any Tier-2 access offer should be treated as a modelled pricing experiment. Source: WeWork India All Access Plus public pricing. Modelled floor on Private Office is ₹13,000; below that, the scenario does not service capex within 36 months.
 
 ## Top 3 Risks
 
 | Risk | Exposure | Mitigation |
 |---|---|---|
-| **Capex payback >24 months** | ₹14 cr fit-out vs. ₹2.15 cr 18-month operating loss in base case = ~₹16 cr cash out before breakeven; payback modelled ~Month 38, not 18. | Negotiate landlord-funded fit-out contribution of ₹1,500–₹2,000/sqft (₹6–8 cr) in exchange for 7-year lock-in; convert ₹14 cr capex ask to ₹6–8 cr net. Make landlord contribution a gating condition — no contribution, no pilot. |
-| **Pricing floor breaks downside math** | If Awfis/IndiQube force pricing to ₹11,500 blended, downside case shows zero breakeven inside 18 months and -₹18.46 cr cash position. | Pre-sell 200 seats (40%) to Embassy Group portfolio companies and 1–2 GCC anchors at signed LOIs **before lease execution**. If <150 seats pre-committed by lease-signing date, pause pilot. |
-| **Kochi enterprise demand may not absorb premium pricing** | Infopark's 72K white-collar base is heavily Indian-IT and mid-tier GCC, not the global-banking/consulting profile that pays ₹16K+ in Tier-1. | Run a 90-day demand validation **before** lease signing: direct outreach to top 30 Infopark tenants + Phase 3 GCC pipeline, with priced LOIs at ₹15,000 PO. If conversion <10% on qualified outreach, redirect ₹16 cr to a second Bengaluru centre where pricing is proven. This is the kill switch. |
+| **Capex payback >24 months** | ₹14 cr fit-out vs. ₹2.15 cr 18-month operating loss in base case = ~₹16 cr cash out before breakeven; payback modelled ~Month 38, not 18. | Negotiate landlord-funded fit-out contribution of ₹1,500–₹2,000/sqft (₹6–8 cr) in exchange for 7-year lock-in; convert ₹14 cr capex ask to ₹6–8 cr net. Treat landlord contribution as a gating assumption for the pilot model. |
+| **Pricing floor breaks downside math** | If Awfis/IndiQube force pricing to ₹11,500 blended, downside case shows zero breakeven inside 18 months and -₹18.46 cr cash position. | Seek pre-commitment from a named-account list and 1–2 potential GCC anchors before lease execution. If pre-commitment falls below the modelled threshold, pause the pilot. |
+| **Kochi enterprise demand may not absorb premium pricing** | Infopark's 72K white-collar base is heavily Indian-IT and mid-tier GCC, not the global-banking/consulting profile that pays ₹16K+ in Tier-1. | Run a 90-day demand validation **before** lease signing: direct outreach to top 30 Infopark tenants + Phase 3 GCC pipeline, with priced LOIs at the modelled ₹15,000 PO assumption. If conversion <10% on qualified outreach, the modelled investment could be redirected to a stronger proven market. This is the validation gate. |
 
 ## Why Now
-Brigade WTC Kakkanad and Phase 3 leasing terms are negotiable today while the building stabilises; in 12 months Awfis and Smartworks will have absorbed the marquee floor plates and the GCC anchor tenants who would otherwise be WeWork's launch customers.
+If suitable Grade A floor plates are available on favourable terms, the timing may be worth exploring before competitors strengthen their position in the corridor.
 </script>
 
 <script type="text/markdown" id="md-6">
 # Campaign Concept — WeWork Kochi Launch
 
-**Working campaign title: "Kochi Deserves Better."**
+**Working campaign title: "The Building Catches Up."**
 
-A Tier-2 launch campaign for WeWork India's first premium flex centre in Kochi. The campaign argues a single point: Infopark's 72,000 white-collar professionals and a pipeline of 120 GCCs by 2031 are operating on infrastructure built for a smaller ambition. WeWork is the first operator to match the building to the brief.
+A modelled Tier-2 launch campaign for a potential premium flex centre in Kochi. The campaign argues a single point: Infopark's 72,000 white-collar professionals and Kerala’s GCC Playbook target of growth from 40 to 120 GCCs and 200,000 professionals by 2030 point to demand worth testing. The campaign frames WeWork as the kind of operator that could match the workplace to the work already happening there. Sources: Infopark public figures; Kerala GCC Playbook.
 
 ---
 
@@ -1427,11 +1994,11 @@ A Tier-2 launch campaign for WeWork India's first premium flex centre in Kochi. 
 The hero film opens on a wide aerial of Infopark at 9:14 AM — buses, ID lanyards, glass towers, the everyday density of 72,000 professionals walking into Tier-1 jobs inside Tier-2 buildings. The camera cuts inside to a GCC floor: foreign clients on a Zoom wall, a town hall in three languages, a CFO reviewing a global P&L. Then the line lands.
 
 - **Visual hook:** Infopark from above at rush hour, then a slow push into a WeWork floor where the standard finally matches the work being done inside it.
-- **Headline:** *Kochi's work grew up. Its workplace just did too.*
-- **Supporting line:** WeWork opens in Kochi — the first enterprise-grade flex built for the GCCs and founders already here.
+- **Headline:** *Kochi is building at global speed. Its workplace should keep pace.*
+- **Supporting line:** A potential WeWork Kochi launch positioned as enterprise-grade flex for the GCCs and founders already there.
 - **Lead format:** 30-second hero film, cut down to 6-second LinkedIn pre-roll and a static OOH set running at Kochi airport arrivals, the NH-66 Kakkanad corridor, and the Infopark Phase 1 entry roundabout.
 
-Awfis and IndiQube cannot run this line — they are the buildings the headline is moving past.
+The line is designed to differentiate on enterprise-grade standard rather than only location or price.
 
 ---
 
@@ -1440,23 +2007,23 @@ Awfis and IndiQube cannot run this line — they are the buildings the headline 
 **Variant 1: The Standard, Finally Local**
 Audience: GCC India heads and global operations leaders evaluating Kochi for a captive build-out.
 Headline: *Your London board. Your Kochi floor. Same standard.*
-Body: WeWork opens in Kochi with the same enterprise spec your teams use in Bengaluru, Mumbai and Manila. Signed by global firms across 50+ India centres. Now ready for the 120 GCCs Infopark Phase 3 is built to hold.
-Proof point: 120 GCCs targeted at Infopark by 2031.
+Body: A potential WeWork Kochi launch framed around enterprise-grade flexible workspace for Kerala’s GCC pipeline.
+Proof point: Kerala’s GCC Playbook targets growth from 40 to 120 GCCs and 200,000 professionals by 2030. Source: Kerala GCC Playbook.
 Lead format: LinkedIn document post + 1:1 BD outreach sequence to named GCC leaders.
 
 **Variant 2: A Cleaner P&L, A Faster Move**
 Audience: Mid-market Indian CEOs and CFOs (100–500 employees) sizing up a Kochi expansion or HQ shift.
 Headline: *Move to Kochi in 30 days. Not 9 months.*
-Body: A WeWork Private Office in Kochi runs ₹15,000 a seat — fully fitted, fully serviced, fully off your balance sheet. No fit-out capex, no lease lock-in, no broker. Scale up or down by the floor.
-Proof point: ₹15,000 Private Office seat / ₹13,200 blended — and zero capex.
+Body: A modelled WeWork Private Office in Kochi at ₹15,000 a seat, positioned to reduce upfront fit-out capex and lease complexity. Exact accounting treatment and commercial terms would vary by contract.
+Proof point: Modelled ₹15,000 Private Office seat / ₹13,200 blended; designed to reduce upfront fit-out capex and lease complexity. Exact accounting and terms vary by contract.
 Lead format: 60-second founder film + a gated TCO calculator landing page.
 
 **Variant 3: Build the Team, Not the Lease**
 Audience: Series B+ founders running split teams between Bengaluru/Mumbai and Kochi.
-Headline: *Hire in Kochi this quarter. Decide the lease never.*
-Body: All Access from ₹9,000 a seat across every WeWork in India. Land your Kochi engineering pod on Monday, plug into Bengaluru on Thursday, walk away in twelve months if the plan changes. The network is the perk.
-Proof point: ₹9,000 All Access — 21% below the Tier-1 equivalent.
-Lead format: WhatsApp creative + founder-network landing page, seeded through Kerala Startup Mission and YC/Sequoia India alumni groups.
+Headline: *Hire in Kochi this quarter. Defer the lease decision.*
+Body: A Kochi access product could test whether satellite teams and founders value national network flexibility without committing to a full private office.
+Proof point: Official All Access Plus benchmark: ₹15,000 + tax/month; any Tier-2 access offer should be treated as a modelled pricing experiment. Source: WeWork India All Access Plus public pricing.
+Lead format: WhatsApp creative + founder-network landing page, with potential partner/community distribution subject to access and approval.
 
 ---
 
@@ -1467,8 +2034,8 @@ Lead format: WhatsApp creative + founder-network landing page, seeded through Ke
 | LinkedIn (organic + paid) | 35% | Highest-intent reach for GCC leaders, CFOs and Series B+ founders; carries the document post, founder film and ABM retargeting. |
 | OOH (Kochi-specific) | 20% | Geo-fenced to Infopark Phase 1 entry, Kakkanad corridor and airport arrivals — the three roads every target audience drives daily. |
 | Performance / Search | 15% | Captures intent on "office space Kochi," "Infopark coworking," "GCC setup Kochi" — narrow, conversion-led, not a brand spend. |
-| PR / Earned media | 15% | Anchors the "first premium flex in Kochi" narrative in ET, Mint, YourStory and The Hindu BusinessLine ahead of the centre opening. |
-| Direct outreach / Events | 15% | A founder dinner at the centre, an Infopark CEO breakfast, and a 200-name BD list — this is where signed LOIs come from. |
+| PR / Earned media | 15% | Anchors the "premium flex for Kochi’s GCC pipeline" narrative in ET, Mint, YourStory and The Hindu BusinessLine ahead of the centre opening. |
+| Direct outreach / Events | 15% | A founder dinner at the centre, an Infopark CEO breakfast, and a 200-name BD list — intended to support priced LOI conversations. |
 
 Total: 100%.
 
@@ -1476,11 +2043,11 @@ Total: 100%.
 
 ## 4. Launch Timeline
 
-**Pre-Launch (Days 1–30):** Hero film and OOH go live across Kochi airport, Kakkanad and Infopark; LinkedIn document post seeds the GCC and founder feed; the 200-name outreach list begins 1:1 sequences against the Deal Strategist's qualified target set.
+**Pre-Launch (Days 1–30):** Hero film and OOH could go live across Kochi airport, Kakkanad and Infopark; LinkedIn document post seeds the GCC and founder feed; the 200-name outreach list begins 1:1 sequences against the Deal Strategist's qualified target set.
 
-**Launch (Days 31–60):** Centre walkthroughs open by appointment; the Infopark CEO breakfast and founder dinner activate the priced-LOI conversations; performance search and ABM retargeting compound against the warm pipeline.
+**Launch (Days 31–60):** Centre walkthroughs could open by appointment; the Infopark CEO breakfast and founder dinner activate the priced-LOI conversations; performance search and ABM retargeting compound against the warm pipeline.
 
-**Conversion (Days 61–90):** Three message variants shift to closing creative tied to specific objections; the Day 90 gate measures 200+ qualified outreach contacts, 20+ priced LOI conversations, and a 10% LOI conversion floor — the trigger the Deal Strategist uses to greenlight the next Tier-2 city.
+**Conversion (Days 61–90):** Three message variants shift to closing creative tied to specific objections; the Day 90 gate could measure 200+ qualified outreach contacts, 20+ priced LOI conversations, and a 10% LOI conversion working threshold — the trigger the Deal Strategist uses to greenlight the next Tier-2 city.
 
 ---
 
@@ -1489,10 +2056,10 @@ Total: 100%.
 | Metric | Target | Source |
 |---|---|---|
 | Qualified Infopark/GCC outreach contacts | 200+ | HubSpot CRM |
-| Priced LOI conversations | 20+ | Sales pipeline |
-| LOI conversion rate | ≥10% | Sales pipeline |
-| Kochi-targeted LinkedIn impressions | 500K+ | LinkedIn Campaign Manager |
-| Kochi waitlist signups | 300+ | Landing page → HubSpot |
+| Priced LOI conversations | 20+ | Modelled target / sales pipeline |
+| LOI conversion rate | ≥10% | Modelled threshold / sales pipeline |
+| Kochi-targeted LinkedIn impressions | 500K+ | Modelled target / LinkedIn Campaign Manager |
+| Kochi waitlist signups | 300+ | Modelled target / landing page → HubSpot |
 
 ---
 
@@ -1622,7 +2189,7 @@ Total: 100%.
 
   /* ---------- Hero entrance ---------- */
   if(prefersReducedMotion){
-    document.querySelectorAll('.hero-headline .line, .hero-sub, .hero-ctas, .hero-bottom').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('.hero-headline .line, .hero-sub, .hero-ctas, .hero-bottom, .hero-proof, .project-note').forEach(function(el){ el.classList.add('in'); });
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   } else {
     var heroLines = document.querySelectorAll('.hero-headline .line');
@@ -1631,7 +2198,15 @@ Total: 100%.
     });
     setTimeout(function(){ document.querySelector('.hero-sub').classList.add('in'); }, 100 + heroLines.length*120 + 100);
     setTimeout(function(){ document.querySelector('.hero-ctas').classList.add('in'); }, 100 + heroLines.length*120 + 220);
-    setTimeout(function(){ document.querySelector('.hero-bottom').classList.add('in'); }, 100 + heroLines.length*120 + 340);
+    setTimeout(function(){
+      var proof = document.querySelector('.hero-proof');
+      if(proof) proof.classList.add('in');
+    }, 100 + heroLines.length*120 + 310);
+    setTimeout(function(){
+      var note = document.querySelector('.project-note');
+      if(note) note.classList.add('in');
+    }, 100 + heroLines.length*120 + 390);
+    setTimeout(function(){ document.querySelector('.hero-bottom').classList.add('in'); }, 100 + heroLines.length*120 + 500);
 
     /* ---------- Reveal on scroll ---------- */
     var revealObs = new IntersectionObserver(function(entries){
@@ -1685,28 +2260,51 @@ Total: 100%.
   document.querySelectorAll('.stat-num[data-target]').forEach(function(el){ statObs.observe(el); });
 
   /* ---------- Card expand/collapse ---------- */
-  document.querySelectorAll('.card').forEach(function(card){
+  document.querySelectorAll('.card').forEach(function(card, idx){
+    var body = card.querySelector('.card-body');
+    var toggle = card.querySelector('.card-toggle');
+    if(!body || !toggle) return;
+    var id = body.id || 'card-body-' + (idx + 1);
+    body.id = id;
+    body.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-controls', id);
+    toggle.setAttribute('aria-expanded', 'false');
+
+    function openCard(){
+      card.classList.add('expanded');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.innerHTML = 'Close asset <span aria-hidden="true">↑</span>';
+      setTimeout(function(){
+        if(card.classList.contains('expanded')) body.style.maxHeight = 'none';
+      }, 520);
+    }
+    function closeCard(){
+      if(body.style.maxHeight === 'none') body.style.maxHeight = body.scrollHeight + 'px';
+      requestAnimationFrame(function(){ body.style.maxHeight = '0px'; });
+      card.classList.remove('expanded');
+      body.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = 'Read asset <span aria-hidden="true">↓</span>';
+    }
+    function toggleCard(){
+      if(card.classList.contains('expanded')) closeCard();
+      else openCard();
+    }
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      toggleCard();
+    });
     card.addEventListener('click', function(e){
-      // ignore clicks inside expanded body's links/text selection
-      if(card.classList.contains('expanded') && e.target.closest('.card-body')){
-        // allow link clicks etc, only collapse on toggle click
-        if(!e.target.classList.contains('card-toggle') && !e.target.closest('.card-toggle')) return;
-      }
-      var body = card.querySelector('.card-body');
-      var toggle = card.querySelector('.card-toggle');
-      if(card.classList.contains('expanded')){
-        body.style.maxHeight = '0px';
-        card.classList.remove('expanded');
-        toggle.innerHTML = 'Expand <span aria-hidden="true">↓</span>';
-      } else {
-        card.classList.add('expanded');
-        body.style.maxHeight = body.scrollHeight + 'px';
-        toggle.innerHTML = 'Collapse <span aria-hidden="true">↑</span>';
-        // recheck after fonts settle
-        setTimeout(function(){
-          if(card.classList.contains('expanded')) body.style.maxHeight = body.scrollHeight + 'px';
-        }, 600);
-      }
+      if(e.target.closest('a')) return;
+      if(card.classList.contains('expanded') && e.target.closest('.card-body')) return;
+      toggleCard();
+    });
+  });
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('.card.expanded .card-body').forEach(function(body){
+      body.style.maxHeight = 'none';
     });
   });
 
@@ -1743,41 +2341,112 @@ Total: 100%.
   /* ---------- Tabs ---------- */
   var tabs = document.querySelectorAll('.tab');
   var panels = document.querySelectorAll('.tab-panel');
-  tabs.forEach(function(t){
+  tabs.forEach(function(t, idx){
+    var key = t.getAttribute('data-tab');
+    var panel = document.querySelector('[data-panel="' + key + '"]');
+    var tabId = 'campaign-tab-' + key;
+    var panelId = 'campaign-panel-' + key;
+    t.id = tabId;
+    t.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+    t.setAttribute('aria-controls', panelId);
+    t.setAttribute('tabindex', idx === 0 ? '0' : '-1');
+    if(panel){
+      panel.id = panelId;
+      panel.setAttribute('aria-labelledby', tabId);
+    }
     t.addEventListener('click', function(){
-      var key = t.getAttribute('data-tab');
-      tabs.forEach(function(x){ x.classList.toggle('active', x===t); });
-      panels.forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-panel')===key); });
+      activateTab(t);
+    });
+    t.addEventListener('keydown', function(e){
+      var current = Array.prototype.indexOf.call(tabs, t);
+      var next = null;
+      if(e.key === 'ArrowRight') next = tabs[(current + 1) % tabs.length];
+      if(e.key === 'ArrowLeft') next = tabs[(current - 1 + tabs.length) % tabs.length];
+      if(next){
+        e.preventDefault();
+        activateTab(next);
+        next.focus();
+      }
     });
   });
+  function activateTab(activeTab){
+    var key = activeTab.getAttribute('data-tab');
+    tabs.forEach(function(x){
+      var isActive = x === activeTab;
+      x.classList.toggle('active', isActive);
+      x.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      x.setAttribute('tabindex', isActive ? '0' : '-1');
+    });
+    panels.forEach(function(p){ p.classList.toggle('active', p.getAttribute('data-panel')===key); });
+  }
 
   /* ---------- Donut chart ---------- */
-  // Each circle: stroke-dasharray = circumference; stroke-dashoffset = circumference - segmentLength + offsetForRotation
-  // We'll set dasharray to "segLength gapLength" and rotate each circle so the segment starts at the right offset.
   var R = 50;
   var C = 2 * Math.PI * R;
-  var segs = [
-    {id:'seg1', pct:35},
-    {id:'seg2', pct:20},
-    {id:'seg3', pct:15},
-    {id:'seg4', pct:15},
-    {id:'seg5', pct:15}
-  ];
+  var channelData = {
+    linkedin:{id:'seg1', pct:35, shortName:'LinkedIn', name:'LinkedIn (organic + paid)', copy:'Highest-intent reach for GCC leaders, CFOs and Series B+ founders; carries the document post, founder film and ABM retargeting.'},
+    ooh:{id:'seg2', pct:20, shortName:'OOH', name:'OOH (Kochi-specific)', copy:'Geo-fenced to Infopark Phase 1 entry, Kakkanad corridor and airport arrivals — the three roads every target audience drives daily.'},
+    search:{id:'seg3', pct:15, shortName:'Search', name:'Performance / Search', copy:'Captures intent on "office space Kochi," "Infopark coworking," "GCC setup Kochi" — narrow, conversion-led, not a brand spend.'},
+    pr:{id:'seg4', pct:15, shortName:'PR', name:'PR / Earned media', copy:'Anchors the "premium flex for Kochi’s GCC pipeline" narrative in ET, Mint, YourStory and BusinessLine ahead of the centre opening.'},
+    events:{id:'seg5', pct:15, shortName:'Events', name:'Direct outreach / Events', copy:'A founder dinner at the centre, an Infopark CEO breakfast, and a 200-name BD list — intended to support priced LOI conversations.'}
+  };
+  var channelKeys = ['linkedin','ooh','search','pr','events'];
   var cumulative = 0;
-  segs.forEach(function(s){
+  channelKeys.forEach(function(key){
+    var s = channelData[key];
     var len = (s.pct/100)*C;
     var el = document.getElementById(s.id);
     if(!el) return;
     el.setAttribute('stroke-dasharray', '0 '+C);
     el.style.transform = 'rotate('+(-90 + (cumulative/100)*360)+'deg)';
     el.dataset.finalLen = len;
-    s.cumulative = cumulative;
     cumulative += s.pct;
+    el.addEventListener('mouseenter', function(){ setActiveChannel(key); });
+    el.addEventListener('click', function(){ setActiveChannel(key); });
+    el.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        setActiveChannel(key);
+      }
+    });
   });
+  function setActiveChannel(key){
+    var active = channelData[key];
+    if(!active) return;
+    document.querySelectorAll('.donut-svg .seg').forEach(function(seg){
+      var isActive = seg.getAttribute('data-channel') === key;
+      seg.classList.toggle('is-active', isActive);
+      seg.classList.toggle('is-muted', !isActive);
+      seg.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+    document.querySelectorAll('.legend-row[data-channel]').forEach(function(row){
+      var isActive = row.getAttribute('data-channel') === key;
+      row.classList.toggle('is-active', isActive);
+      row.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    var name = document.getElementById('donutCenterName');
+    var pct = document.getElementById('donutCenterPct');
+    var activeName = document.getElementById('channelActiveName');
+    var activePct = document.getElementById('channelActivePct');
+    var activeCopy = document.getElementById('channelActiveCopy');
+    if(name) name.textContent = active.shortName;
+    if(pct) pct.textContent = active.pct + '%';
+    if(activeName) activeName.textContent = active.name;
+    if(activePct) activePct.textContent = active.pct + '% of mix';
+    if(activeCopy) activeCopy.textContent = active.copy;
+  }
+  document.querySelectorAll('.legend-row[data-channel]').forEach(function(row){
+    var key = row.getAttribute('data-channel');
+    row.addEventListener('mouseenter', function(){ setActiveChannel(key); });
+    row.addEventListener('focus', function(){ setActiveChannel(key); });
+    row.addEventListener('click', function(){ setActiveChannel(key); });
+  });
+  setActiveChannel('linkedin');
   var donutObs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
-        segs.forEach(function(s, i){
+        channelKeys.forEach(function(key, i){
+          var s = channelData[key];
           var el = document.getElementById(s.id);
           if(!el) return;
           var len = (s.pct/100)*C;
@@ -1785,17 +2454,64 @@ Total: 100%.
             el.setAttribute('stroke-dasharray', len + ' ' + (C-len));
           } else {
             setTimeout(function(){
-              el.style.transition = 'stroke-dasharray 1s '+'cubic-bezier(0.25,0.46,0.45,0.94)';
+              el.style.transition = 'stroke-dasharray 1s '+'cubic-bezier(0.25,0.46,0.45,0.94), opacity .2s cubic-bezier(0.25,0.46,0.45,0.94), stroke-width .2s cubic-bezier(0.25,0.46,0.45,0.94)';
               el.setAttribute('stroke-dasharray', len + ' ' + (C-len));
             }, i*150);
           }
         });
+        setActiveChannel('linkedin');
         donutObs.unobserve(e.target);
       }
     });
   },{threshold:0.3});
   var donutSvg = document.querySelector('.donut-svg');
   if(donutSvg) donutObs.observe(donutSvg);
+
+  /* ---------- Tableau responsive embeds ---------- */
+  function resizeTableauEmbeds(){
+    (window.__tableauEmbeds || []).forEach(function(config){
+      var holder = document.getElementById(config.id);
+      if(!holder) return;
+      var viz = holder.getElementsByTagName('object')[0];
+      if(!viz) return;
+      var width = holder.parentElement ? holder.parentElement.clientWidth : holder.clientWidth;
+      var nativeHeight = width < 680 ? config.mobileHeight : config.desktopHeight;
+      var nativeWidth = width < 680 ? 720 : 1366;
+      var height = Math.max(width * (nativeHeight / nativeWidth), width < 680 ? 620 : 520);
+      height = Math.min(height, width < 680 ? 920 : Math.max(620, window.innerHeight * .78));
+      holder.style.width = '100%';
+      holder.style.height = Math.round(height) + 'px';
+      viz.style.width = '100%';
+      viz.style.height = Math.round(height) + 'px';
+    });
+  }
+  resizeTableauEmbeds();
+  window.addEventListener('resize', resizeTableauEmbeds);
+  if((window.__tableauEmbeds || []).length && !document.querySelector('script[data-tableau-api]')){
+    var tableauScript = document.createElement('script');
+    tableauScript.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    tableauScript.setAttribute('data-tableau-api','true');
+    document.body.appendChild(tableauScript);
+  }
+
+  /* ---------- Scroll progress and active nav ---------- */
+  var progress = document.getElementById('scrollProgress');
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.chrome-nav a'));
+  var sections = navLinks.map(function(link){ return document.querySelector(link.getAttribute('href')); }).filter(Boolean);
+  function updateScrollChrome(){
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+    if(progress) progress.style.width = Math.max(0, Math.min(100, pct)) + '%';
+    var current = sections[0];
+    sections.forEach(function(section){
+      if(section.getBoundingClientRect().top <= 130) current = section;
+    });
+    navLinks.forEach(function(link){
+      link.classList.toggle('active', current && link.getAttribute('href') === '#' + current.id);
+    });
+  }
+  updateScrollChrome();
+  window.addEventListener('scroll', updateScrollChrome, {passive:true});
 
   /* ---------- Smooth scroll fallback ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
