@@ -352,8 +352,9 @@ section.dark .takeaway{
 }
 .dashboard-link:hover{opacity:1;border-color:var(--black);}
 .tableau-wrapper{
+  display:block;
   width:100%;
-  overflow:hidden;
+  overflow:visible;
   background:#fff;
   border:0;
   border-radius:0;
@@ -363,8 +364,9 @@ section.dark .takeaway{
   z-index:1;
 }
 .tableauPlaceholder{
+  display:block;
   width:100% !important;
-  min-height:540px;
+  min-height:795px;
   position:relative;
   border:1px solid var(--border);
   border-radius:8px 8px 0 0;
@@ -372,14 +374,20 @@ section.dark .takeaway{
   background:#fff;
 }
 .tableauViz{
+  display:block;
   width:100% !important;
   max-width:100% !important;
+  min-height:795px;
   border:0;
 }
 .dashboard-brief{
+  position:relative;
+  clear:both;
+  z-index:1;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:1px;
+  margin-top:0;
   background:var(--border);
   border-top:1px solid var(--border);
 }
@@ -834,7 +842,7 @@ section.dark .takeaway{
   .chrome-pill{display:none;}
   .hero{padding-top:92px;}
   .hero-headline{font-size:clamp(42px,13vw,62px);}
-  .tableauPlaceholder{min-height:620px;}
+  .tableauPlaceholder{min-height:977px;}
 }
 
 /* Reduced motion */
@@ -971,6 +979,304 @@ section.dark .takeaway{
 @media (prefers-reduced-motion:reduce){
   .hero-proof,.project-note{opacity:1;transform:none;}
 }
+
+
+
+/* Final recruiter polish */
+.built-stack{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:min(940px,100%);
+  margin:18px 0 0;
+  padding:12px 14px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:8px;
+  background:rgba(255,255,255,.08);
+  color:var(--muted-dark);
+  font-size:12px;
+  line-height:1.45;
+  flex-wrap:wrap;
+}
+.built-stack strong{
+  color:#fff;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.built-stack span{color:rgba(255,255,255,.78);}
+.automation-use-case{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  gap:18px;
+  margin:18px 0 0;
+  padding:18px;
+  border:1px solid rgba(83,74,183,.18);
+  border-radius:10px;
+  background:linear-gradient(180deg,#fff,var(--accent-soft));
+}
+.automation-use-case h3{
+  margin:0;
+  color:var(--ink);
+  font-size:18px;
+  line-height:1.2;
+  letter-spacing:-.015em;
+}
+.automation-use-case p{
+  margin:0;
+  color:#494949;
+  font-size:14px;
+  line-height:1.6;
+}
+.capability-section{background:#fff;}
+.capability-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin-top:28px;
+}
+.capability-card{
+  min-width:0;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:var(--surface);
+}
+.capability-card strong{
+  display:block;
+  margin-bottom:8px;
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.25;
+  letter-spacing:-.01em;
+}
+.capability-card span{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+.close-walkthrough{
+  text-align:center;
+  margin:0 auto 36px;
+  max-width:760px;
+}
+.close-walkthrough strong{
+  display:block;
+  margin-bottom:8px;
+  color:#fff;
+  font-size:clamp(24px,3vw,34px);
+  line-height:1.15;
+  letter-spacing:-.02em;
+}
+.close-walkthrough span{
+  display:block;
+  color:var(--muted-dark);
+  font-size:15px;
+  line-height:1.55;
+}
+@media(max-width:820px){
+  .automation-use-case,.capability-grid{grid-template-columns:1fr;}
+}
+@media(max-width:540px){
+  .built-stack{align-items:flex-start;flex-direction:column;}
+  .capability-card{padding:18px;}
+}
+
+
+/* AUTOMATION PROTOTYPE */
+.automation-section{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(180deg,#FFFFFF 0%,#F8F5EF 58%,#FFFFFF 100%);
+}
+.automation-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 18% 4%,rgba(83,74,183,.10),transparent 30%),linear-gradient(90deg,rgba(17,17,17,.035) 1px,transparent 1px),linear-gradient(180deg,rgba(17,17,17,.025) 1px,transparent 1px);
+  background-size:auto,44px 44px,44px 44px;
+  opacity:.85;
+}
+.automation-section .container{position:relative;z-index:1;}
+.automation-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(300px,420px);
+  gap:28px;
+  align-items:end;
+  margin-bottom:28px;
+}
+.automation-hero .section-intro{margin-bottom:0;max-width:860px;}
+.automation-value{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  background:var(--border);
+  box-shadow:0 18px 45px rgba(17,17,17,.08);
+}
+.automation-value span{
+  min-height:78px;
+  padding:14px 16px;
+  background:#fff;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  line-height:1.35;
+}
+.automation-value strong{display:block;margin-bottom:6px;color:var(--ink);font-size:14px;}
+.automation-console{
+  border:1px solid rgba(17,17,17,.14);
+  border-radius:12px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 30px 90px rgba(17,17,17,.14);
+  overflow:hidden;
+}
+.automation-console-top{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  align-items:center;
+  padding:22px 24px;
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(135deg,#111 0%,#1D1B26 58%,#403A99 100%);
+  color:#fff;
+}
+.automation-console-label{
+  margin:0 0 6px;
+  color:rgba(255,255,255,.68);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.automation-console-status{
+  margin:0;
+  color:#fff;
+  font-size:clamp(20px,2vw,28px);
+  font-weight:850;
+  line-height:1.16;
+  letter-spacing:-.025em;
+}
+.automation-run{
+  min-height:46px;
+  appearance:none;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:8px;
+  padding:13px 20px;
+  background:#fff;
+  color:var(--black);
+  font:inherit;
+  font-size:13px;
+  font-weight:850;
+  cursor:pointer;
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease),opacity .2s var(--ease);
+  white-space:nowrap;
+}
+.automation-run:hover{transform:translateY(-1px);box-shadow:0 20px 46px rgba(0,0,0,.34);opacity:1;}
+.automation-run:focus-visible{outline:3px solid rgba(255,255,255,.46);outline-offset:3px;}
+.automation-progress{height:7px;background:#E7E0D7;overflow:hidden;}
+.automation-progress span{
+  display:block;
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),#12715B);
+  transition:width .35s var(--ease);
+}
+.automation-workspace{padding:24px;}
+.automation-agent-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin-bottom:18px;
+}
+.automation-agent{
+  min-width:0;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  overflow:hidden;
+  transition:border-color .28s var(--ease),box-shadow .28s var(--ease),transform .28s var(--ease),opacity .28s var(--ease);
+}
+.automation-console.is-js .automation-agent{opacity:.72;}
+.automation-agent.is-active{opacity:1;transform:translateY(-3px);border-color:rgba(83,74,183,.42);box-shadow:0 20px 50px rgba(83,74,183,.14);}
+.automation-agent.is-complete{opacity:1;border-color:rgba(18,113,91,.28);box-shadow:0 14px 34px rgba(18,113,91,.08);}
+.automation-agent-head{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  padding:16px 16px 14px;
+  border-bottom:1px solid var(--border);
+  background:var(--surface);
+}
+.automation-agent-kicker{
+  display:block;
+  margin-bottom:5px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.automation-agent h3{margin:0;color:var(--ink);font-size:17px;line-height:1.2;letter-spacing:-.015em;}
+.automation-status-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:28px;
+  padding:6px 9px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:850;
+  white-space:nowrap;
+}
+.automation-status-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:#B9B1A6;}
+.automation-agent.is-active .automation-status-chip{color:var(--accent-ink);border-color:rgba(83,74,183,.28);background:var(--accent-soft);}
+.automation-agent.is-active .automation-status-chip::before{background:var(--accent);box-shadow:0 0 0 5px rgba(83,74,183,.14);}
+.automation-agent.is-complete .automation-status-chip{color:var(--success);border-color:rgba(18,113,91,.22);background:#ECF7F3;}
+.automation-agent.is-complete .automation-status-chip::before{background:var(--success);}
+.automation-log{display:grid;gap:9px;margin:0;padding:16px;list-style:none;}
+.automation-log li{position:relative;padding-left:18px;color:#4C4C4C;font-size:13px;line-height:1.45;overflow-wrap:anywhere;}
+.automation-log li::before{content:"";position:absolute;left:0;top:.58em;width:7px;height:7px;border-radius:2px;background:var(--border);}
+.automation-console.is-js .automation-log li{opacity:0;transform:translateY(5px);transition:opacity .22s var(--ease),transform .22s var(--ease);}
+.automation-console.is-js .automation-log li.is-visible{opacity:1;transform:translateY(0);}
+.automation-log li.is-visible::before,.automation-agent.is-complete .automation-log li::before{background:var(--success);}
+.automation-output-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:14px;align-items:stretch;}
+.automation-email-card,.automation-complete-card{min-width:0;border:1px solid var(--border);border-radius:10px;background:#fff;box-shadow:0 14px 38px rgba(17,17,17,.06);}
+.automation-email-card{padding:18px;transition:opacity .28s var(--ease),transform .28s var(--ease),border-color .28s var(--ease),box-shadow .28s var(--ease);}
+.automation-console.is-js .automation-email-card{opacity:.46;transform:translateY(6px);}
+.automation-console.is-js .automation-email-card.is-visible{opacity:1;transform:translateY(0);border-color:rgba(83,74,183,.38);box-shadow:0 20px 48px rgba(83,74,183,.12);}
+.automation-output-label{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px;}
+.automation-output-label h3{margin:0;color:var(--ink);font-size:16px;letter-spacing:-.01em;}
+.automation-mini-chip{display:inline-flex;align-items:center;min-height:26px;padding:5px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-ink);font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+.automation-subject{margin:0 0 12px;padding:12px 13px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink);font-size:13px;line-height:1.45;overflow-wrap:anywhere;}
+.automation-email-body{margin:0;color:#454545;font-size:13px;line-height:1.6;white-space:pre-line;overflow-wrap:anywhere;}
+.automation-complete-card{display:grid;align-content:space-between;gap:18px;padding:18px;background:linear-gradient(180deg,#fff 0%,#F2FBF7 100%);}
+.automation-complete-mark{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--success);color:#fff;font-size:24px;font-weight:900;box-shadow:0 16px 36px rgba(18,113,91,.24);}
+.automation-complete-card h3{margin:16px 0 8px;color:var(--ink);font-size:22px;line-height:1.15;letter-spacing:-.02em;}
+.automation-complete-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55;}
+.automation-console.is-js .automation-complete-card{opacity:.5;}
+.automation-console.is-js .automation-complete-card.is-visible{opacity:1;}
+.automation-note{margin:18px 0 0;padding:13px 15px;border:1px solid rgba(83,74,183,.18);border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);font-size:12px;line-height:1.45;font-weight:750;}
+.automation-proof{margin-top:22px;padding:22px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.92);box-shadow:0 24px 70px rgba(17,17,17,.10);}
+.automation-proof-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:16px;}
+.automation-proof h3{margin:0 0 5px;color:var(--ink);font-size:20px;letter-spacing:-.015em;}
+.automation-proof p{margin:0;color:var(--muted);font-size:13px;line-height:1.55;}
+.automation-proof-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid var(--border);border-radius:7px;color:var(--ink);background:#fff;font-size:12px;font-weight:850;white-space:nowrap;}
+.automation-proof-link:focus-visible{outline:3px solid rgba(83,74,183,.25);outline-offset:3px;}
+.automation-proof-frame{border:1px solid rgba(17,17,17,.16);border-radius:10px;overflow:hidden;background:#111;box-shadow:0 22px 60px rgba(17,17,17,.16);}
+.automation-proof-frame img{width:100%;height:auto;max-width:100%;}
+@media(max-width:980px){.automation-hero{grid-template-columns:1fr;align-items:start;}.automation-value{min-width:0;}.automation-agent-grid,.automation-output-grid{grid-template-columns:1fr;}}
+@media(max-width:620px){.automation-console-top,.automation-proof-head{grid-template-columns:1fr;display:grid;}.automation-run,.automation-proof-link{width:100%;justify-content:center;}.automation-workspace,.automation-proof{padding:16px;}.automation-agent-head{display:grid;grid-template-columns:1fr;}.automation-value{grid-template-columns:1fr;}.automation-output-label{align-items:flex-start;flex-direction:column;}}
+@media (prefers-reduced-motion:reduce){.automation-run,.automation-progress span,.automation-agent,.automation-log li,.automation-email-card{transition:none !important;transform:none !important;}}
 </style>
 </head>
 <body>
@@ -982,6 +1288,7 @@ section.dark .takeaway{
   </a>
   <nav class="chrome-nav" aria-label="Sections">
     <a href="#finding">Data</a>
+    <a href="#automation">Automation</a>
     <a href="#work">Assets</a>
     <a href="#plan">90 days</a>
     <a href="#campaign">Campaign</a>
@@ -990,7 +1297,7 @@ section.dark .takeaway{
   <span class="chrome-pill">Growth pitch</span>
 </header>
 
-<!-- 1. HERO -->
+<!-- 1 HERO -->
 <section class="hero dark" id="hero">
   <div class="container hero-top">
     <span class="hero-eyebrow">WeWork India<span class="dot"></span>Marketing Pitch</span>
@@ -1002,6 +1309,7 @@ section.dark .takeaway{
       <span class="line">A growth pitch</span>
       <span class="line">for WeWork India.</span>
       <span class="line accent">Six assets. Two dashboards.</span>
+      <span class="line">One AI automation prototype.</span>
       <span class="line">One 90-day plan.</span>
     </h1>
     <p class="hero-sub">Created as an independent hiring work sample, structured like practical growth work: search, content, city expansion, campaign thinking, and pipeline measurement.</p>
@@ -1013,7 +1321,11 @@ section.dark .takeaway{
     <div class="hero-proof" aria-label="Pitch proof points">
       <span><strong>6</strong>draft-ready marketing assets</span>
       <span><strong>2</strong>live Tableau dashboards</span>
-      <span><strong>90</strong>days of measurable execution</span>
+      <span><strong>1</strong>AI/n8n automation prototype</span>
+    </div>
+    <div class="built-stack" aria-label="Project stack">
+      <strong>Built with</strong>
+      <span>Tableau · Ahrefs keyword research · n8n · Gemini · Gmail approval workflow · HTML/CSS/JS · Public market research</span>
     </div>
   </div>
 
@@ -1022,7 +1334,7 @@ section.dark .takeaway{
   </div>
 </section>
 
-<!-- 2. THE FINDING -->
+<!-- 2 FINDING -->
 <section class="surface" id="finding">
   <div class="container">
     <p class="eyebrow reveal">The Data</p>
@@ -1129,7 +1441,63 @@ section.dark .takeaway{
   </div>
 </section>
 
-<!-- 3. THE WORK -->
+
+<!-- 3 AUTOMATION -->
+<section class="surface automation-section" id="automation">
+  <div class="container">
+    <div class="automation-hero reveal">
+      <div>
+        <p class="eyebrow">Working Prototype</p>
+        <p class="takeaway">A high-fidelity front-end simulation of the AI-assisted lead follow-up workflow I built separately in n8n.</p>
+        <h2 class="section-h2">AI Lead-to-Follow-Up Automation</h2>
+        <p class="section-intro">Flexible workspace leads arrive with different levels of urgency, team size, budget, and product fit. This prototype shows how WeWork could qualify enquiries, recommend the right workspace product, generate a personalised follow-up email, and keep human approval before outreach.</p>
+      </div>
+      <div class="automation-value" aria-label="Automation business value">
+        <span><strong>Faster response</strong>Same-day follow-up for qualified leads.</span>
+        <span><strong>Sharper priority</strong>Hot leads surfaced with product fit.</span>
+        <span><strong>Human control</strong>Approval before Gmail draft creation.</span>
+      </div>
+    </div>
+    <div class="automation-console reveal" data-automation-console aria-live="polite">
+      <div class="automation-console-top">
+        <div><p class="automation-console-label">Agentic Sales Ops Console</p><p class="automation-console-status" id="automationStatus">Ready to process Priya Sharma from NovaTech</p></div>
+        <button class="automation-run" type="button" id="automationRun">Run Automation</button>
+      </div>
+      <div class="automation-progress" aria-hidden="true"><span id="automationProgress"></span></div>
+      <div class="automation-workspace">
+        <div class="automation-agent-grid" aria-label="Automation agents">
+          <article class="automation-agent" data-agent="0"><div class="automation-agent-head"><div><span class="automation-agent-kicker">Agent 01</span><h3>Lead Intake Agent</h3></div><span class="automation-status-chip" data-status>Waiting</span></div><ul class="automation-log"><li>Parsed lead: Priya Sharma, NovaTech</li><li>Detected team size: 12</li><li>Identified need: Private office in Melbourne CBD</li><li>Timeline: Within 1 month</li></ul></article>
+          <article class="automation-agent" data-agent="1"><div class="automation-agent-head"><div><span class="automation-agent-kicker">Agent 02</span><h3>Qualification Agent</h3></div><span class="automation-status-chip" data-status>Waiting</span></div><ul class="automation-log"><li>Lead temperature: Hot</li><li>Priority score: 9/10</li><li>Product match: WeWork Private Office</li><li>Response urgency: Same day</li></ul></article>
+          <article class="automation-agent" data-agent="2"><div class="automation-agent-head"><div><span class="automation-agent-kicker">Agent 03</span><h3>Approval + Draft Agent</h3></div><span class="automation-status-chip" data-status>Waiting</span></div><ul class="automation-log"><li>Follow-up email generated</li><li>Human approval checkpoint triggered</li><li>Approval received</li><li>Gmail draft created</li></ul></article>
+        </div>
+        <div class="automation-output-grid">
+          <article class="automation-email-card" id="automationEmail"><div class="automation-output-label"><h3>Email draft preview</h3><span class="automation-mini-chip">Generated after qualification</span></div><p class="automation-subject"><strong>Subject:</strong> Private office solutions for NovaTech in Melbourne CBD</p><p class="automation-email-body">Hi Priya,
+
+Thank you for reaching out to WeWork. I understand that NovaTech is looking for a private office in Melbourne CBD to accommodate your team of 12 within the next month.
+
+Based on your requirements, our Private Office solution is the perfect fit for your SaaS team. It offers flexible contract terms and gives your hybrid employees access to professional meeting rooms and premium amenities.
+
+Are you available for a tour this week to view our available spaces for your team?
+
+Best regards,
+WeWork Sales Operations</p></article>
+          <aside class="automation-complete-card" id="automationComplete"><div><div class="automation-complete-mark" aria-hidden="true">✓</div><h3>Gmail draft created after human approval.</h3><p>The HTML does not send email or connect to live systems. It demonstrates the approval-controlled workflow experience.</p></div><span class="automation-mini-chip">Final state</span></aside>
+        </div>
+        <p class="automation-note">Workflow logic built in n8n using Gemini and Gmail. This visual demonstrates the prototype experience and does not connect to live systems.</p>
+        <div class="automation-use-case">
+          <h3>How this could be used at WeWork</h3>
+          <p>In a real sales or growth team, this workflow could sit behind a lead form or CRM intake. Incoming enquiries could be classified by urgency, team size, location, and product fit; high-intent leads could receive faster human-reviewed follow-up, while lower-priority enquiries move into nurture. The goal is not to replace sales teams, but to reduce manual triage and improve speed-to-lead while keeping approval in control.</p>
+        </div>
+      </div>
+    </div>
+    <aside class="automation-proof reveal" aria-label="Actual n8n workflow proof of build">
+      <div class="automation-proof-head"><div><p class="eyebrow">Actual n8n workflow</p><h3>Proof of build</h3><p>Lead intake → Gemini qualification → approval email → IF approval check → Gmail draft creation.</p></div><a class="automation-proof-link" href="assets/email-automation-workflow.png" target="_blank" rel="noopener">View larger</a></div>
+      <div class="automation-proof-frame"><img src="assets/email-automation-workflow.png" alt="n8n workflow showing lead intake, Gemini AI qualification, Gmail approval, IF approval routing, and Gmail draft creation." /></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 4 WORK -->
 <section id="work">
   <div class="container">
     <p class="eyebrow reveal">The Deliverables</p>
@@ -1195,7 +1563,7 @@ section.dark .takeaway{
   </div>
 </section>
 
-<!-- 4. THE PLAN -->
+<!-- 5 PLAN -->
 <section class="surface" id="plan">
   <div class="container">
     <p class="eyebrow reveal">Q1 Plan</p>
@@ -1359,7 +1727,7 @@ section.dark .takeaway{
   </div>
 </section>
 
-<!-- 5. THE CAMPAIGN -->
+<!-- 6 CAMPAIGN -->
 <section id="campaign">
   <div class="container">
     <p class="eyebrow reveal">Campaign Concept</p>
@@ -1486,9 +1854,28 @@ section.dark .takeaway{
   </div>
 </section>
 
-<!-- 6. CLOSE -->
+
+<!-- 7 PROJECT DEMONSTRATES -->
+<section class="surface capability-section" id="demonstrates">
+  <div class="container">
+    <p class="eyebrow reveal">What This Project Demonstrates</p>
+    <h2 class="section-h2 reveal">Practical marketing execution, not just strategy.</h2>
+    <p class="section-intro reveal">This project was built to show practical marketing execution, not just strategy. It combines public research, SEO analysis, dashboarding, campaign development, city-level growth planning, and an AI-assisted n8n workflow prototype.</p>
+    <div class="capability-grid reveal" aria-label="Project capabilities">
+      <div class="capability-card"><strong>Market and competitor analysis</strong><span>Public-data synthesis translated into testable growth opportunities.</span></div>
+      <div class="capability-card"><strong>SEO and content strategy</strong><span>Keyword-led recommendations connected to acquisition and city demand.</span></div>
+      <div class="capability-card"><strong>Dashboard-led decision making</strong><span>Tableau dashboards built to make market signals easier to compare.</span></div>
+      <div class="capability-card"><strong>Campaign and launch planning</strong><span>Messaging, channel mix, and phased execution for a Kochi test scenario.</span></div>
+      <div class="capability-card"><strong>AI workflow automation</strong><span>n8n, Gemini, and Gmail workflow logic translated into a working front-end prototype.</span></div>
+      <div class="capability-card"><strong>Business storytelling for growth teams</strong><span>A hiring-facing narrative that connects research, creative, analytics, and execution.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 CLOSE -->
 <section class="dark" id="close">
   <div class="container">
+    <div class="close-walkthrough reveal"><strong>Want the 5-minute walkthrough?</strong><span>I can walk through the strategy, dashboard logic, automation prototype, and campaign plan in an interview.</span></div>
     <h2 class="close-line reveal">I’d welcome the chance to discuss how this thinking could support WeWork India’s growth team.</h2>
     <div class="contact-row reveal">
       <div>
@@ -2467,6 +2854,55 @@ Total: 100%.
   var donutSvg = document.querySelector('.donut-svg');
   if(donutSvg) donutObs.observe(donutSvg);
 
+
+
+  /* ---------- Automation prototype ---------- */
+  var automationConsole = document.querySelector('[data-automation-console]');
+  var automationRun = document.getElementById('automationRun');
+  var automationStatus = document.getElementById('automationStatus');
+  var automationProgress = document.getElementById('automationProgress');
+  var automationEmail = document.getElementById('automationEmail');
+  var automationComplete = document.getElementById('automationComplete');
+  var automationTimers = [];
+  var automationStatuses = ['Ready to process Priya Sharma from NovaTech','Lead Intake Agent is parsing the enquiry','Qualification Agent is scoring fit and urgency','Email draft generated and ready for approval','Approval + Draft Agent is creating the Gmail draft','Gmail draft created after human approval'];
+  function clearAutomationTimers(){ automationTimers.forEach(function(timer){ window.clearTimeout(timer); }); automationTimers = []; }
+  function updateAutomationStatus(text, progress){ if(automationStatus) automationStatus.textContent = text; if(automationProgress) automationProgress.style.width = progress + '%'; }
+  function resetAutomation(){
+    if(!automationConsole) return;
+    updateAutomationStatus(automationStatuses[0], 0);
+    document.querySelectorAll('.automation-agent').forEach(function(agent){
+      agent.classList.remove('is-active','is-complete');
+      var chip = agent.querySelector('[data-status]');
+      if(chip) chip.textContent = 'Waiting';
+      agent.querySelectorAll('.automation-log li').forEach(function(line){ line.classList.remove('is-visible'); });
+    });
+    if(automationEmail) automationEmail.classList.remove('is-visible');
+    if(automationComplete) automationComplete.classList.remove('is-visible');
+  }
+  function runAgent(agentIndex, startDelay, completeProgress, statusText, onComplete){
+    var agent = document.querySelector('.automation-agent[data-agent="'+agentIndex+'"]');
+    if(!agent) return startDelay;
+    var chip = agent.querySelector('[data-status]');
+    var lines = Array.prototype.slice.call(agent.querySelectorAll('.automation-log li'));
+    var lineDelay = prefersReducedMotion ? 30 : 260;
+    automationTimers.push(window.setTimeout(function(){ agent.classList.add('is-active'); if(chip) chip.textContent = 'Running'; updateAutomationStatus(statusText, Math.max(8, completeProgress - 22)); }, startDelay));
+    lines.forEach(function(line, i){ automationTimers.push(window.setTimeout(function(){ line.classList.add('is-visible'); }, startDelay + lineDelay * (i + 1))); });
+    var finishAt = startDelay + lineDelay * (lines.length + 1);
+    automationTimers.push(window.setTimeout(function(){ agent.classList.remove('is-active'); agent.classList.add('is-complete'); if(chip) chip.textContent = 'Complete'; updateAutomationStatus(automationStatuses[Math.min(agentIndex + 2, automationStatuses.length - 1)], completeProgress); if(onComplete) onComplete(); }, finishAt));
+    return finishAt + (prefersReducedMotion ? 80 : 360);
+  }
+  if(automationConsole){ automationConsole.classList.add('is-js'); resetAutomation(); }
+  if(automationRun && automationConsole){
+    automationRun.addEventListener('click', function(){
+      clearAutomationTimers(); resetAutomation();
+      var delay = prefersReducedMotion ? 20 : 240;
+      delay = runAgent(0, delay, 28, automationStatuses[1]);
+      delay = runAgent(1, delay, 58, automationStatuses[2], function(){ if(automationEmail) automationEmail.classList.add('is-visible'); updateAutomationStatus(automationStatuses[3], 68); });
+      runAgent(2, delay, 100, automationStatuses[4], function(){ if(automationComplete) automationComplete.classList.add('is-visible'); updateAutomationStatus(automationStatuses[5], 100); });
+    });
+  }
+
+
   /* ---------- Tableau responsive embeds ---------- */
   function resizeTableauEmbeds(){
     (window.__tableauEmbeds || []).forEach(function(config){
@@ -2475,14 +2911,13 @@ Total: 100%.
       var viz = holder.getElementsByTagName('object')[0];
       if(!viz) return;
       var width = holder.parentElement ? holder.parentElement.clientWidth : holder.clientWidth;
-      var nativeHeight = width < 680 ? config.mobileHeight : config.desktopHeight;
-      var nativeWidth = width < 680 ? 720 : 1366;
-      var height = Math.max(width * (nativeHeight / nativeWidth), width < 680 ? 620 : 520);
-      height = Math.min(height, width < 680 ? 920 : Math.max(620, window.innerHeight * .78));
+      var height = width < 680 ? config.mobileHeight : config.desktopHeight;
       holder.style.width = '100%';
-      holder.style.height = Math.round(height) + 'px';
+      holder.style.height = height + 'px';
+      holder.style.minHeight = height + 'px';
       viz.style.width = '100%';
-      viz.style.height = Math.round(height) + 'px';
+      viz.style.height = height + 'px';
+      viz.style.minHeight = height + 'px';
     });
   }
   resizeTableauEmbeds();
